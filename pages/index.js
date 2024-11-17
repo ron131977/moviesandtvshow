@@ -885,7 +885,7 @@ export default function Home() {
       {/* Close Button */}
       <button
         onClick={closePopup}
-        className="absolute top-4 right-4 text-2xl font-bold text-white z-[100001] bg-gray-800 p-2 rounded-3xl hover:bg-gray-900"
+        className="absolute top-4 right-4 text-3xl font-bold text-red-500 z-[100001] bg-gray-800 p-2 rounded-full hover:bg-gray-900"
       >
         &#10005;
       </button>
@@ -1063,7 +1063,7 @@ export default function Home() {
     font-size: 24px;
     background-color: transparent;
     border: none;
-    color: white;
+    color: red;
     cursor: pointer;
     z-index: 9999;
   }
