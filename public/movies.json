@@ -1,5 +1,31 @@
 [
     {
+        "title": "Watch Aftermath Movie (2024)",
+        "name": "Movie Aftermath (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687865/Aftermath.2024_cjksrh.webp",
+        "videomovieitem": [
+            "sCrCnfQjs"
+        ],
+        "videomovies": [
+            "tt26545708"
+        ],
+        "dailymovies": "x98jopy",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687863/Aftermath.2024_1_qtb85w.webp"
+    },
+    {
+        "title": "Watch A Mistake Movie (2024)",
+        "name": "Movie A Mistake (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687868/A.Mistake.2024_mms4d5.webp",
+        "videomovieitem": [
+            "wrrhRwxD_"
+        ],
+        "videomovies": [
+            "tt13605284"
+        ],
+        "dailymovies": "#",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687870/A.Mistake.2024_1_fv2zob.webp"
+    },
+    {
         "title": "Watch A Different Man Movie (2024)",
         "name": "Movie A Different Man (2024)",
         "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687875/A_Different_Man.2024_x7fb0r.webp",
