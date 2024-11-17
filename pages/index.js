@@ -885,8 +885,8 @@ export default function Home() {
       {/* Close Button */}
       <button
         onClick={closePopup}
-        className="impulse absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-gray-500 p-2 rounded-full hover:bg-gray-900"  style={{
-          borderRadius: "50%",
+        className="absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-gray-500 p-2 rounded-full hover:bg-gray-900"  style={{
+          borderRadius: "100%",
         }}
       >
         &#10005;
