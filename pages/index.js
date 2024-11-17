@@ -889,7 +889,7 @@ export default function Home() {
                   rounded: "50%",
                 }}
               >
-                Close;
+                &#10005;
               </button>
 
               {popupContent && (
