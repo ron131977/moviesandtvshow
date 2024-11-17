@@ -908,6 +908,7 @@ export default function Home() {
                       className="rounded-lg shadow-md"
                       style={{
                         filter: "contrast(1.2) saturate(1.3) brightness(1.1)",
+                        marginTop:"10px"
                       }}
                     />
                   </div>
