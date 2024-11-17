@@ -73,7 +73,7 @@ export default function Home() {
     videomovies && videomovies[currentEpisodeIndex]
       ? videomovies[currentEpisodeIndex]
       : {};
-   
+
   const episode = isMovies ? currentVideoData.episode || 1 : null;
   const season = isMovies ? currentVideoData.season || 1 : null;
 
@@ -879,79 +879,79 @@ export default function Home() {
         {/* Repeat for Adult and TV Shows sections with similar structure */}
 
         {showPopup && popupContent && (
-  <div className="popup-overlay fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[99999] overflow-auto">
-    <div className="popup-content bg-white rounded-lg p-0 w-full h-full max-w-full max-h-full relative flex flex-col overflow-y-auto z-[100000]">
-
-      {/* Close Button */}
-      <button
-        onClick={closePopup}
-        className="absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-gray-500 p-2 rounded-full hover:bg-gray-900" style={{
-          rounded:"50%",
-         }}
-      >
-       Close;
-      </button>
-
-      {popupContent && (
-        <>
-          <h2 className="text-gray-800 mb-4 text-center px-2 text-3xl font-bold mt-2 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800">
-            {popupContent.title}
-          </h2>
-
-          <div className="aspect-w-16 aspect-h-9 w-full h-full">
-            <iframe
-              src={src}
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allowFullScreen
-              className="rounded-lg shadow-md"
-              style={{
-                filter: "contrast(1.2) saturate(1.3) brightness(1.1)",
-              }}
-            />
-          </div>
-
-          <div className="flex flex-col items-center mt-4 gap-4">
-            <div className="flex flex-wrap justify-center gap-2 w-full">
-              {currentVideoSources.map((source, index) => (
-                <button
-                  key={index}
-                  onClick={() => handlePlayerSelect(index)}
-                  className={`px-4 py-2 rounded-md font-semibold transition ${
-                    currentPlayerIndex === index
-                      ? "bg-red-500 text-white"
-                      : "bg-gray-200 text-black"
-                  } hover:bg-green-500 hover:text-white`}
-                >
-                  Player {index + 1}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {tvshow?.badge === "TV Show" && (
-            <div className="flex justify-between items-center w-full mt-4 px-2">
+          <div className="popup-overlay fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[99999] overflow-auto">
+            <div className="popup-content bg-white rounded-lg p-0 w-full h-full max-w-full max-h-full relative flex flex-col overflow-y-auto z-[100000]">
+              {/* Close Button */}
               <button
-                onClick={handlePreviousEpisode}
-                disabled={currentEpisodeIndex === 0}
-                className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 disabled:opacity-50 font-bold"
+                onClick={closePopup}
+                className="absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-gray-500 p-2 rounded-full hover:bg-gray-900"
+                style={{
+                  rounded: "50%",
+                }}
               >
-                Previous
+                Close;
               </button>
 
-              <h2 className="text-center flex-grow bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl font-bold hover:text-blue-800">
-                Episode Navigation
-              </h2>
+              {popupContent && (
+                <>
+                  <h2 className="text-gray-800 mb-4 text-center px-2 text-3xl font-bold mt-2 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent hover:text-blue-800">
+                    {popupContent.title}
+                  </h2>
 
-              <button
-                onClick={handleNextEpisode}
-                disabled={false}
-                className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 disabled:opacity-50 font-bold"
-              >
-                Next
-              </button>
-            </div>
+                  <div className="aspect-w-16 aspect-h-9 w-full h-full">
+                    <iframe
+                      src={src}
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      allowFullScreen
+                      className="rounded-lg shadow-md"
+                      style={{
+                        filter: "contrast(1.2) saturate(1.3) brightness(1.1)",
+                      }}
+                    />
+                  </div>
+
+                  <div className="flex flex-col items-center mt-4 gap-4">
+                    <div className="flex flex-wrap justify-center gap-2 w-full">
+                      {currentVideoSources.map((source, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handlePlayerSelect(index)}
+                          className={`px-4 py-2 rounded-md font-semibold transition ${
+                            currentPlayerIndex === index
+                              ? "bg-red-500 text-white"
+                              : "bg-gray-200 text-black"
+                          } hover:bg-green-500 hover:text-white`}
+                        >
+                          Player {index + 1}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {tvshow?.badge === "TV Show" && (
+                    <div className="flex justify-between items-center w-full mt-4 px-2">
+                      <button
+                        onClick={handlePreviousEpisode}
+                        disabled={currentEpisodeIndex === 0}
+                        className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 disabled:opacity-50 font-bold"
+                      >
+                        Previous
+                      </button>
+
+                      <h2 className="text-center flex-grow bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-2xl font-bold hover:text-blue-800">
+                        Episode Navigation
+                      </h2>
+
+                      <button
+                        onClick={handleNextEpisode}
+                        disabled={false}
+                        className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 disabled:opacity-50 font-bold"
+                      >
+                        Next
+                      </button>
+                    </div>
                   )}
                 </>
               )}
@@ -961,125 +961,125 @@ export default function Home() {
       </main>
 
       <style jsx>{`
-  main {
-    padding: 20px;
-  }
-  .tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  .tabs button {
-    padding: 10px 20px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  .tabs button.active {
-    background: #c0c0c0;
-    color: white;
-  }
-  .movie-list,
-  .tv-show-list {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .movie-item,
-  .tv-show-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-  }
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  .pagination button {
-    padding: 10px;
-    margin: 0 5px;
-    cursor: pointer;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-  }
-  .pagination button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
+        main {
+          padding: 20px;
+        }
+        .tabs {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+        .tabs button {
+          padding: 10px 20px;
+          border: 1px solid #ddd;
+          cursor: pointer;
+          margin-right: 10px;
+        }
+        .tabs button.active {
+          background: #c0c0c0;
+          color: white;
+        }
+        .movie-list,
+        .tv-show-list {
+          display: grid;
+          gap: 20px;
+          grid-template-columns: repeat(5, 1fr);
+        }
+        .movie-item,
+        .tv-show-item {
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: center;
+        }
+        .pagination {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        }
+        .pagination button {
+          padding: 10px;
+          margin: 0 5px;
+          cursor: pointer;
+          background-color: #0070f3;
+          color: white;
+          border: none;
+        }
+        .pagination button:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+        }
 
-  /* Responsive adjustments */
-  @media (max-width: 1200px) {
-    .movie-list,
-    .tv-show-list {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-  @media (max-width: 900px) {
-    .movie-list,
-    .tv-show-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (max-width: 600px) {
-    .movie-list,
-    .tv-show-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+          .movie-list,
+          .tv-show-list {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        @media (max-width: 900px) {
+          .movie-list,
+          .tv-show-list {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        @media (max-width: 600px) {
+          .movie-list,
+          .tv-show-list {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
 
-  .page-number {
-    margin: 0 10px;
-    font-weight: bold;
-  }
+        .page-number {
+          margin: 0 10px;
+          font-weight: bold;
+        }
 
-  .popup-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+        .popup-overlay {
+          background-color: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(10px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
 
-  .popup-content {
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 0;
-    padding: 0;
-    overflow-y: auto;
-  }
+        .popup-content {
+          width: 100vw;
+          height: 100vh;
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 0;
+          padding: 0;
+          overflow-y: auto;
+        }
 
-  .popup-content iframe {
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-  }
+        .popup-content iframe {
+          width: 100%;
+          height: 100%;
+          max-height: 100%;
+        }
 
-  .popup-content .popup-close-button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 24px;
-    background-color: transparent;
-    border: none;
-    color: red;
-    cursor: pointer;
-    z-index: 9999;
-  }
+        .popup-content .popup-close-button {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          font-size: 24px;
+          background-color: transparent;
+          border: none;
+          color: red;
+          cursor: pointer;
+          z-index: 9999;
+        }
 
-  /* For Full-Screen */
-  .popup-content.fullscreen {
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 0;
-    padding: 0;
-  }
-`}</style>
+        /* For Full-Screen */
+        .popup-content.fullscreen {
+          width: 100vw;
+          height: 100vh;
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 0;
+          padding: 0;
+        }
+      `}</style>
     </div>
   );
 }
