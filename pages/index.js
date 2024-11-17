@@ -886,12 +886,8 @@ export default function Home() {
       <button
         onClick={closePopup}
         className="absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-gray-500 p-2 rounded-full hover:bg-gray-900"style={{
-          border: "none",
-          rounded:"100%",
-          borderRadius: "5px",
-          marginBottom:"20px",
-          textShadow: "1px 1px 0px #000",
-        }}
+          rounded:"50%",
+         }}
       >
         &#10005;
       </button>
