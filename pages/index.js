@@ -889,6 +889,7 @@ export default function Home() {
           border: "none",
           rounded:"100%",
           borderRadius: "5px",
+          marginBottom:"20px",
           textShadow: "1px 1px 0px #000",
         }}
       >
