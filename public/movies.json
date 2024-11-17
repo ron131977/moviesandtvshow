@@ -1,5 +1,95 @@
 [
-    
+    {
+        "title": "Watch Monster Summer Movie (2024)",
+        "name": "Movie Monster Summer (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731873732/Monster.Summer.2024_rdkor0.webp",
+        "videomovieitem": [
+            "3sQhjuQ7v"
+        ],
+        "videomovies": [
+            "tt3954936"
+        ],
+        "dailymovies": "",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731873731/Monster.Summer.2024_1_uoz1dy.webp"
+    },
+    {
+        "title": "Watch Gladiator II Movie (2024)",
+        "name": "Movie Gladiator II (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731873732/Gladiator_II.2024_b8dmsw.webp",
+        "videomovieitem": [
+            "Tf2j9I5aM"
+        ],
+        "videomovies": [
+            "tt9218128"
+        ],
+        "dailymovies": "",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731873732/Gladiator_II.2024_1_vmj5fj.webp"
+    },
+    {
+        "title": "Watch Do Not Open Movie (2024)",
+        "name": "Movie Do Not Open (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731873737/Do.Not.Open.2024_mt6emr.webp",
+        "videomovieitem": [
+            "pEQfG_0De"
+        ],
+        "videomovies": [
+            "tt12539228"
+        ],
+        "dailymovies": "x992jeg",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731873736/Do.Not.Open.2024_1_vtlylp.webp"
+    },
+    {
+        "title": "Watch Devara Movie (2024)",
+        "name": "Movie Devara (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731873741/devara_2024_gnrckt.webp",
+        "videomovieitem": [
+            "4RXf5aaKu"
+        ],
+        "videomovies": [
+            "tt11821912"
+        ],
+        "dailymovies": "",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731873739/devara_2024__htonjd.webp"
+    },
+    {
+        "title": "Watch Black Cab Movie (2024)",
+        "name": "Movie Black Cab (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687765/Black_Cab_2024_hbcbfe.webp",
+        "videomovieitem": [
+            "LQ353SlKD"
+        ],
+        "videomovies": [
+            "tt27487086"
+        ],
+        "dailymovies": "x98vmqs",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687763/Black_Cab_2024_1_yhywgj.webp"
+    },
+    {
+        "title": "Watch Average Joe Movie (2024)",
+        "name": "Movie Average Joe (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687773/Average.Joe.2024_dzzhpa.webp",
+        "videomovieitem": [
+            "ybiywuyQh"
+        ],
+        "videomovies": [
+            "tt30840929"
+        ],
+        "dailymovies": "x98vmsu",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687769/Average.Joe.2024__ir6nfs.webp"
+    },
+    {
+        "title": "Watch Khwaabon Ka Jhamela Movie (2024)",
+        "name": "Movie Khwaabon Ka Jhamela (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687777/Khwaabon_Ka_Jhamela_2024_ix8elb.webp",
+        "videomovieitem": [
+            "SgQwiieUT"
+        ],
+        "videomovies": [
+            "tt21159080  "
+        ],
+        "dailymovies": "x98vmsu",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687773/Khwaabon_Ka_Jhamela_2024__kcyu7p.webp"
+    },
     {
         "title": "Watch War Blade Movie (2024)",
         "name": "Movie War Blade (2024)",
