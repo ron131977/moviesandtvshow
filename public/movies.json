@@ -1,5 +1,57 @@
 [
     {
+        "title": "Watch Depravity Movie (2024)",
+        "name": "Movie Depravity (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687846/Depravity.2024_xtxo0q.webp",
+        "videomovieitem": [
+            "aAtBF872b"
+        ],
+        "videomovies": [
+            "tt1659324"
+        ],
+        "dailymovies": "",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687842/Depravity.2024__kgn83x.webp"
+    },
+    {
+        "title": "Watch Cellar Door Movie (2024)",
+        "name": "Movie Cellar Door (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687852/Cellar.Door.2024_tcmyfm.webp",
+        "videomovieitem": [
+            "4T0FRjPzr"
+        ],
+        "videomovies": [
+            "tt11950888"
+        ],
+        "dailymovies": "x98lz8o",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687847/Cellar.Door.2024__d9pjqp.webp"
+    },
+    {
+        "title": "Watch Bloodline Killer Movie (2024)",
+        "name": "Movie Bloodline Killer (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687854/Bloodline.Killer.2024_kcacwn.webp",
+        "videomovieitem": [
+            "vBkpJ2MjB"
+        ],
+        "videomovies": [
+            "tt13899250"
+        ],
+        "dailymovies": "x98lz9e",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687853/Bloodline.Killer.2024_1_vlfap3.webp"
+    },
+    {
+        "title": "Watch Amityville: Where the Echo Lives Movie (2024)",
+        "name": "Movie Amityville: Where the Echo Lives (2024)",
+        "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687860/Amityville.Where.the.Echo.Lives.2024_w1gbxy.webp",
+        "videomovieitem": [
+            "AeSHYVZMt"
+        ],
+        "videomovies": [
+            "tt10071550"
+        ],
+        "dailymovies": "x98lz1c",
+        "image1": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_720,w_1280/v1731687858/Amityville.Where.the.Echo.Lives.2024_1_e4wlwe.webp"
+    },
+    {
         "title": "Watch Aftermath Movie (2024)",
         "name": "Movie Aftermath (2024)",
         "image": "https://res.cloudinary.com/db36kfuq3/image/upload/c_scale,h_750,w_500/v1731687865/Aftermath.2024_cjksrh.webp",
