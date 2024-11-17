@@ -884,7 +884,7 @@ export default function Home() {
               {/* Close Button */}
               <button
                 onClick={closePopup}
-                className="absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-gray-500 p-2 rounded-full hover:bg-gray-900"
+                className="absolute top-4 right-4 text-2xl font-bold text-red-500 z-[100001] bg-black p-2 rounded-full hover:bg-gray-500"
                 style={{
                   rounded: "50%",
                 }}
@@ -908,7 +908,7 @@ export default function Home() {
                       className="rounded-lg shadow-md"
                       style={{
                         filter: "contrast(1.2) saturate(1.3) brightness(1.1)",
-                        marginTop:"10px"
+                     
                       }}
                     />
                   </div>
