@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://moviesandtvshows.vercel.app/sitemap.xml
