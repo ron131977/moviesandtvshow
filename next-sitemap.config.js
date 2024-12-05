@@ -46,7 +46,7 @@
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://moviesntvshows.netlify.app/', // Replace with your actual live domain
+  siteUrl: 'https://moviesandtvshows.vercel.app/', // Replace with your actual live domain
   changefreq: 'daily',
   sitemapSize: 7000,
   // generateRobotsTxt: true, // Optionally generate robots.txt

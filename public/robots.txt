@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://moviesntvshows.netlify.app/sitemap.xml
+Sitemap: https://moviesandtvshows.vercel.app/sitemap.xml
