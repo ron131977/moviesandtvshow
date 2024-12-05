@@ -137,10 +137,35 @@ const soap2daySchema = JSON.stringify({
   ],
 });
 
+
+
 export default function HomePage({ allData }) {
+  useEffect(() => {
+    // Dynamically load the Ko-fi widget script
+    const kofiScript = document.createElement('script');
+    kofiScript.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+    kofiScript.async = true;
+
+    kofiScript.onload = () => {
+      console.log("Ko-fi widget loaded.");
+      if (typeof kofiWidgetOverlay !== 'undefined') {
+        kofiWidgetOverlay.draw('payat', {
+          'type': 'floating-chat',
+          'floating-chat.donateButton.text': 'Support me',
+          'floating-chat.donateButton.background-color': '#00b9fe',
+          'floating-chat.donateButton.text-color': '#fff'
+        });
+      }
+    };
+
+    document.body.appendChild(kofiScript);
+
+    return () => {
+      document.body.removeChild(kofiScript);
+    };
+  }, []);
  
 
-  
   return (
     <>
     <Head>
@@ -174,7 +199,7 @@ export default function HomePage({ allData }) {
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="googlebot" content="index,follow" />
     <meta name="revisit-after" content="1 days" />
-    <meta name="referrer" content="origin" />
+    <m eta name="referrer" content="origin" />
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -234,8 +259,11 @@ export default function HomePage({ allData }) {
       name="twitter:image"
       content="https://moviesandtvshows.vercel.app/og_image.jpg"
     />
-    <meta name="google-site-verification" content="4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k" />
-   
+    <meta
+      name="google-site-verification"
+      content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+    />
+
     <meta
       name="facebook-domain-verification"
       content="du918bycikmo1jw78wcl9ih6ziphd7"
@@ -245,200 +273,200 @@ export default function HomePage({ allData }) {
       content="dm3bs67ukdegz9qik"
     />
     <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
+ 
     <script
     type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: soap2daySchema }}
-  />  
-  
+  />
   </Head>
   <SocialSharing />
-  <div style={styles.container}>
+    <div style={styles.container}>
    
-   {/* <header className="flex flex-col sm:flex-row items-center justify-center sm:justify-between h-auto sm:h-[70vh] p-5 bg-blue-600"> */}
-     {/* Hero Image Section */}
-       <Image
-       src="/logo.png"
-       alt="Movies & Tv Shows"
-       className=" items-center justify-center h-auto sm:h-[30vh] p-2 "
-       width={500}
-       height={300}
-       quality={90}
-       loading="lazy"
-       style={{
-         // width: "500px",
-         // height: "300px",
-          margin: "auto",
-         // marginTop: "50px",
-         marginBottom: "20px",
-         borderRadius: "50px",
-         boxShadow: "0 0 10px 0 #000",
-         filter: "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)",
-       }}
-     /> 
+    {/* <header className="flex flex-col sm:flex-row items-center justify-center sm:justify-between h-auto sm:h-[70vh] p-5 bg-blue-600"> */}
+      {/* Hero Image Section */}
+        <Image
+        src="/logo.png"
+        alt="Movies & Tv Shows"
+        className=" items-center justify-center h-auto sm:h-[30vh] p-2 "
+        width={500}
+        height={300}
+        quality={90}
+        loading="lazy"
+        style={{
+          // width: "500px",
+          // height: "300px",
+           margin: "auto",
+          // marginTop: "50px",
+          marginBottom: "20px",
+          borderRadius: "50px",
+          boxShadow: "0 0 10px 0 #000",
+          filter: "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)",
+        }}
+      /> 
 
-     {/* Hero Content Section */}
-     <div className="w-full sm:w-[100%] flex flex-col items-center justify-center p-5 bg-blue-600 text-white text-center sm:ml-5 rounded-lg mt-5 sm:mt-0"     style={{ textShadow: "1px 1px 5px #000", marginTop: "50px",}}>
-       <h1
-         className="text-3xl sm:text-5xl font-bold mb-4"
-         style={{ textShadow: "1px 1px 5px #000" }}
-       >
-         Welcome to Movies & Tv Shows™
-       </h1>
-       <p
-         className="text-xl max-w-xl mb-4"
-         style={{ textShadow: "2px 2px 5px #000" }}
-       >
-         Your source for the latest updates across various categories.
-       </p>
-      
-     </div>
-   {/* </header> */}
+      {/* Hero Content Section */}
+      <div className="w-full sm:w-[100%] flex flex-col items-center justify-center p-5 bg-blue-600 text-white text-center sm:ml-5 rounded-lg mt-5 sm:mt-0"     style={{ textShadow: "1px 1px 5px #000", marginTop: "50px",}}>
+        <h1
+          className="text-3xl sm:text-5xl font-bold mb-4"
+          style={{ textShadow: "1px 1px 5px #000" }}
+        >
+          Welcome to Movies & Tv Shows™
+        </h1>
+        <p
+          className="text-xl max-w-xl mb-4"
+          style={{ textShadow: "2px 2px 5px #000" }}
+        >
+          Your source for the latest updates across various categories.
+        </p>
+       
+      </div>
+    {/* </header> */}
 
 
-     <div className="categories">
- {Object.keys(allData).map((category) => (
-   <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md"  style={{ marginBottom: "20px",}}> 
-     <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
-       style={{ textShadow: "3px 5px 5px #000", marginBottom:'20px'}}>
-       <Link href={`/${category}`} className="no-underline hover:no-underline">
-         {category.charAt(0).toUpperCase() + category.slice(1)}
-       </Link>
-     </h2>
-     <div className="category-content flex flex-col gap-8">
-       {allData[category].map((item, index) => (
-         <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
-           <Link href={`/${category}/${generateSlug(item.title)}`} className="no-underline hover:no-underline">
-             <div className="card-content flex flex-col md:flex-row gap-4">
-               <img
-                 src={item.image1 || item.image}
-                 alt={item.title}
-                 className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
-               />
-               <div className="card-text">
-                 <h3 className="card-title text-xl font-semibold mb-2">{item.title}</h3>
-                 <p className="card-description text-gray-600 text-base">
-                           {item.synopsis}
-                         </p>
-               </div>
-             </div>
-           </Link>
-           <small className="item-footer text-sm text-gray-500 mt-2">
-             {/* {item.date} - {item.time} | Courtesy: {item.courtesy} */}
-             Upload Date: {item.year}
-           </small>
-         </div>
-       ))}
-     </div>
-     <Link href={`/${category}`} className="no-underline hover:no-underline">
-           <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5 ">View All  {category.charAt(0).toUpperCase() + category.slice(1)} Articles →</div>
-     </Link>
-   </section>
- ))}
+      <div className="categories">
+  {Object.keys(allData).map((category) => (
+    <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md"  style={{ marginBottom: "20px",}}> 
+      <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
+        style={{ textShadow: "3px 5px 5px #000", marginBottom:'20px'}}>
+        <Link href={`/${category}`} className="no-underline hover:no-underline">
+          {category.charAt(0).toUpperCase() + category.slice(1)}
+        </Link>
+      </h2>
+      <div className="category-content flex flex-col gap-8">
+        {allData[category].map((item, index) => (
+          <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
+            <Link href={`/${category}/${generateSlug(item.title)}`} className="no-underline hover:no-underline">
+              <div className="card-content flex flex-col md:flex-row gap-4">
+                <img
+                  src={item.image1 || item.image}
+                  alt={item.title}
+                  className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
+                />
+                <div className="card-text">
+                  <h3 className="card-title text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="card-description text-gray-600 text-base">
+                            {item.synopsis}
+                          </p>
+                </div>
+              </div>
+            </Link>
+            <small className="item-footer text-sm text-gray-500 mt-2">
+              {/* {item.date} - {item.time} | Courtesy: {item.courtesy} */}
+              Upload Date: {item.year}
+            </small>
+          </div>
+        ))}
+      </div>
+      <Link href={`/${category}`} className="no-underline hover:no-underline">
+            <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5 ">View All  {category.charAt(0).toUpperCase() + category.slice(1)} Articles →</div>
+      </Link>
+    </section>
+  ))}
 </div>
 
-     </div>
-   </>
- );
+      </div>
+    </>
+  );
 }
 
 const styles = {
- container: {
-   maxWidth: "1200px",
-   margin: "0 auto",
-   padding: "20px",
-   fontFamily: "'Poppins', sans-serif",
-   color: "#333",
-   
- },
- // hero: {
- //   textAlign: "center",
- //   padding: "40px 20px",
- //   backgroundColor: "#007bff", // Blue hero background
- //   color: "white",
- //   borderRadius: "8px",
- //   marginBottom: "40px",
- // },
- // heroTitle: {
- //   fontSize: "3rem",
- //   marginBottom: "10px",
- // },
- // heroDescription: {
- //   fontSize: "1.5rem",
- //   maxWidth: "800px",
- //   margin: "0 auto",
- // },
- // dateTime: {
- //   marginTop: "20px",
- //   fontSize: "1.2rem",
- //   backgroundColor: "rgba(0, 0, 0, 0.5)", // Dark background for date/time
- //   padding: "10px 15px",
- //   borderRadius: "5px",
- //   color: "white",
- //   display: "inline-block",
- // },
- categories: {
-   display: "flex",
-   flexDirection: "column",
-   gap: "40px",
- },
- categorySection: {
-   backgroundColor: "var(--section-bg-color)", // Dynamic section background
-   padding: "20px",
-   borderRadius: "12px",
-   boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)", // Subtle shadow
- },
- categoryTitle: {
-   fontSize: "2rem",
-   fontWeight: "600",
-   marginBottom: "20px",
-   color: "#007bff", // Blue color for category title
- },
- categoryContent: {
-   display: "flex",
-   flexDirection: "column",
-   gap: "30px",
- },
- card: {
-   backgroundColor: "var(--card-bg-color)", // Dynamic card background
-   padding: "15px",
-   borderRadius: "8px",
-   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow for cards
-   overflow: "hidden",
- },
- cardContent: {
-   display: "flex",
-   gap: "20px",
- },
- cardImage: {
-   width: "120px",
-   height: "80px",
-   objectFit: "cover",
-   borderRadius: "8px",
- },
- cardText: {
-   display: "flex",
-   flexDirection: "column",
- },
- cardTitle: {
-   fontSize: "1.25rem",
-   fontWeight: "600",
-   margin: "0 0 10px",
- },
- cardDescription: {
-   fontSize: "1rem",
-   color: "#666", // Grey color for descriptions
- },
- itemFooter: {
-   fontSize: "0.9rem",
-   color: "#777", // Slightly lighter grey for footer text
-   marginTop: "10px",
- },
- viewAll: {
-   fontSize: "1rem",
-   fontWeight: "600",
-   color: "#007bff", // Blue color for "view all" link
-   textDecoration: "none",
-   marginTop: "20px",
- },
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "20px",
+    fontFamily: "'Poppins', sans-serif",
+    color: "#333",
+    
+  },
+  // hero: {
+  //   textAlign: "center",
+  //   padding: "40px 20px",
+  //   backgroundColor: "#007bff", // Blue hero background
+  //   color: "white",
+  //   borderRadius: "8px",
+  //   marginBottom: "40px",
+  // },
+  // heroTitle: {
+  //   fontSize: "3rem",
+  //   marginBottom: "10px",
+  // },
+  // heroDescription: {
+  //   fontSize: "1.5rem",
+  //   maxWidth: "800px",
+  //   margin: "0 auto",
+  // },
+  // dateTime: {
+  //   marginTop: "20px",
+  //   fontSize: "1.2rem",
+  //   backgroundColor: "rgba(0, 0, 0, 0.5)", // Dark background for date/time
+  //   padding: "10px 15px",
+  //   borderRadius: "5px",
+  //   color: "white",
+  //   display: "inline-block",
+  // },
+  categories: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "40px",
+  },
+  categorySection: {
+    backgroundColor: "var(--section-bg-color)", // Dynamic section background
+    padding: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)", // Subtle shadow
+  },
+  categoryTitle: {
+    fontSize: "2rem",
+    fontWeight: "600",
+    marginBottom: "20px",
+    color: "#007bff", // Blue color for category title
+  },
+  categoryContent: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "30px",
+  },
+  card: {
+    backgroundColor: "var(--card-bg-color)", // Dynamic card background
+    padding: "15px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow for cards
+    overflow: "hidden",
+  },
+  cardContent: {
+    display: "flex",
+    gap: "20px",
+  },
+  cardImage: {
+    width: "120px",
+    height: "80px",
+    objectFit: "cover",
+    borderRadius: "8px",
+  },
+  cardText: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardTitle: {
+    fontSize: "1.25rem",
+    fontWeight: "600",
+    margin: "0 0 10px",
+  },
+  cardDescription: {
+    fontSize: "1rem",
+    color: "#666", // Grey color for descriptions
+  },
+  itemFooter: {
+    fontSize: "0.9rem",
+    color: "#777", // Slightly lighter grey for footer text
+    marginTop: "10px",
+  },
+  viewAll: {
+    fontSize: "1rem",
+    fontWeight: "600",
+    color: "#007bff", // Blue color for "view all" link
+    textDecoration: "none",
+    marginTop: "20px",
+  },
 };
 
