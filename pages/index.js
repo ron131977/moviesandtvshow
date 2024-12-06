@@ -254,46 +254,35 @@ export default function HomePage({ allData }) {
   <SocialSharing />
   <div style={styles.container}>
    
-   {/* <header className="flex flex-col sm:flex-row items-center justify-center sm:justify-between h-auto sm:h-[70vh] p-5 bg-blue-600"> */}
-     {/* Hero Image Section */}
-       <Image
-       src="/logo.png"
-       alt="Movies & Tv Shows"
-       className=" items-center justify-center h-auto sm:h-[30vh] p-2 "
-       width={500}
-       height={300}
-       quality={90}
-       loading="lazy"
-       style={{
-         // width: "500px",
-         // height: "300px",
-          margin: "auto",
-         // marginTop: "50px",
-         marginBottom: "20px",
-         borderRadius: "50px",
-         boxShadow: "0 0 10px 0 #000",
-         filter: "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)",
-       }}
-     /> 
-
-     {/* Hero Content Section */}
-     <div className="w-full sm:w-[100%] flex flex-col items-center justify-center p-5 bg-blue-600 text-white text-center sm:ml-5 rounded-lg mt-5 sm:mt-0"     style={{ textShadow: "1px 1px 5px #000", marginTop: "50px",}}>
-       <h1
-         className="text-3xl sm:text-5xl font-bold mb-4"
-         style={{ textShadow: "1px 1px 5px #000" }}
-       >
-         Welcome to Movies & Tv Shows™
-       </h1>
-       <p
-         className="text-xl max-w-xl mb-4"
-         style={{ textShadow: "2px 2px 5px #000" }}
-       >
-         Your source for the latest updates across various categories.
-       </p>
-      
-     </div>
-   {/* </header> */}
-
+  <header style={styles.hero}>
+    <div style={styles.heroImageContainer}>
+    <Image
+        src="/og_image.jpg"
+        alt="Hero Background"
+        // layout="fill"
+        objectFit="cover"
+        priority // Prioritize loading this image
+        width={1200} // Adjust the width according to your needs
+        height={750} // Adjust the height according to your needs
+        quality={90}
+        style={{
+          // height: "200px",
+          // width: "100%",
+          // objectFit: "cover",
+         
+          filter:
+          "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
+        }}
+        // className="w-full sm:w-32 sm:h-20 rounded-md mb-4 sm:mb-0"
+      />
+    </div>
+  <div style={styles.heroTextContainer}>
+    <h1 style={styles.heroTitle}>Welcome to Movies & Tv Shows™</h1>
+    <p style={styles.heroDescription}>
+      Online. Stream. Download. Your source for the latest updates across various categories.
+    </p>
+  </div>
+</header>
 
      <div className="categories">
  {Object.keys(allData).map((category) => (
@@ -342,103 +331,138 @@ export default function HomePage({ allData }) {
 }
 
 const styles = {
- container: {
-   maxWidth: "1200px",
-   margin: "0 auto",
-   padding: "20px",
-   fontFamily: "'Poppins', sans-serif",
-   color: "#333",
-   
- },
- // hero: {
- //   textAlign: "center",
- //   padding: "40px 20px",
- //   backgroundColor: "#007bff", // Blue hero background
- //   color: "white",
- //   borderRadius: "8px",
- //   marginBottom: "40px",
- // },
- // heroTitle: {
- //   fontSize: "3rem",
- //   marginBottom: "10px",
- // },
- // heroDescription: {
- //   fontSize: "1.5rem",
- //   maxWidth: "800px",
- //   margin: "0 auto",
- // },
- // dateTime: {
- //   marginTop: "20px",
- //   fontSize: "1.2rem",
- //   backgroundColor: "rgba(0, 0, 0, 0.5)", // Dark background for date/time
- //   padding: "10px 15px",
- //   borderRadius: "5px",
- //   color: "white",
- //   display: "inline-block",
- // },
- categories: {
-   display: "flex",
-   flexDirection: "column",
-   gap: "40px",
- },
- categorySection: {
-   backgroundColor: "var(--section-bg-color)", // Dynamic section background
-   padding: "20px",
-   borderRadius: "12px",
-   boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)", // Subtle shadow
- },
- categoryTitle: {
-   fontSize: "2rem",
-   fontWeight: "600",
-   marginBottom: "20px",
-   color: "#007bff", // Blue color for category title
- },
- categoryContent: {
-   display: "flex",
-   flexDirection: "column",
-   gap: "30px",
- },
- card: {
-   backgroundColor: "var(--card-bg-color)", // Dynamic card background
-   padding: "15px",
-   borderRadius: "8px",
-   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow for cards
-   overflow: "hidden",
- },
- cardContent: {
-   display: "flex",
-   gap: "20px",
- },
- cardImage: {
-   width: "120px",
-   height: "80px",
-   objectFit: "cover",
-   borderRadius: "8px",
- },
- cardText: {
-   display: "flex",
-   flexDirection: "column",
- },
- cardTitle: {
-   fontSize: "1.25rem",
-   fontWeight: "600",
-   margin: "0 0 10px",
- },
- cardDescription: {
-   fontSize: "1rem",
-   color: "#666", // Grey color for descriptions
- },
- itemFooter: {
-   fontSize: "0.9rem",
-   color: "#777", // Slightly lighter grey for footer text
-   marginTop: "10px",
- },
- viewAll: {
-   fontSize: "1rem",
-   fontWeight: "600",
-   color: "#007bff", // Blue color for "view all" link
-   textDecoration: "none",
-   marginTop: "20px",
- },
-};
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "20px",
+    fontFamily: "'Poppins', sans-serif",
+    color: "#333",
+  },
+  // hero: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   // minHeight: "100vh", // Full viewport height for the hero section
+  //   backgroundImage: "url(https://a2zmovies.vercel.app/og_image.jpg)", // Background image
+  //   backgroundSize: "cover", // Make the image cover the entire area
+  //   backgroundPosition: "center", // Center the image
+  //   backgroundRepeat: "no-repeat", // Prevent image repetition
+  //   color: "#fff", // White text for readability
+  //   textAlign: "center", // Center align text
+  //   padding: "20px", // Add padding for spacing
+  //   boxSizing: "border-box", // Include padding in element's total width/height
+  // },
 
+  // Optional: Responsive tweaks for smaller screens
+  "@media (max-width: 768px)": {
+    hero: {
+      padding: "15px", // Adjust padding for smaller screens
+      backgroundPosition: "top", // Focus on the top part of the image
+    },
+  },
+   
+  hero: {
+    position: "relative",
+    width: "100%",
+    height: "250px", // Reduced height for the hero section
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
+  heroImageContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 1,
+  },
+  heroTextContainer: {
+    position: "relative",
+    zIndex: 2,
+    textAlign: "center",
+    color: "#fff",
+    padding: "10px",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+    borderRadius: "10px",
+  },
+  heroTitle: {
+    fontSize: "2.5rem",
+    fontWeight: "800",
+    marginTop: "10px",
+    marginBottom: "5px",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+  },
+  heroDescription: {
+    fontSize: "1rem",
+    fontWeight: "400",
+    textShadow: "1px 1px 4px rgba(0, 0, 0, 0.6)",
+  },
+  categories: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "40px",
+  },
+  categorySection: {
+    backgroundColor: "var(--section-bg-color)", // Dynamic section background
+    padding: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)", // Subtle shadow
+  },
+  categoryTitle: {
+    fontSize: "2rem",
+    fontWeight: "600",
+    marginBottom: "20px",
+    color: "#007bff", // Blue color for category title
+    
+  },
+  categoryContent: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "30px",
+  },
+  card: {
+    backgroundColor: "var(--card-bg-color)", // Dynamic card background
+    padding: "15px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow for cards
+    overflow: "hidden",
+  },
+  cardContent: {
+    display: "flex",
+    gap: "20px",
+  },
+  cardImage: {
+    width: "120px",
+    height: "80px",
+    objectFit: "cover",
+    borderRadius: "8px",
+  },
+  cardText: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardTitle: {
+    fontSize: "1.25rem",
+    fontWeight: "600",
+    margin: "0 0 10px",
+  },
+  cardDescription: {
+    fontSize: "1rem",
+    color: "#666", // Grey color for descriptions
+  },
+  itemFooter: {
+    fontSize: "0.9rem",
+    color: "#777", // Slightly lighter grey for footer text
+    marginTop: "10px",
+  },
+  viewAll: {
+    fontSize: "1rem",
+    fontWeight: "600",
+    color: "#007bff", // Blue color for "view all" link
+    textDecoration: "none",
+    marginTop: "20px",
+  },
+};
