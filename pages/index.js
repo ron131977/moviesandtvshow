@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import path from "path";
 import fs from "fs/promises";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import SocialSharing from "../components/SocialSharing";
-
 import mainStyles from "@styles/styles.module.css";
+
 // Helper function to create a slug from a title
 function generateSlug(title) {
   return title
@@ -15,19 +15,14 @@ function generateSlug(title) {
     .replace(/^-+|-+$/g, ""); // Remove leading/trailing dashes
 }
 
-
+// Static props to fetch data from JSON files
 export async function getStaticProps() {
-  const categories = [
-   "movies", 
-   "tvshow", 
-   "hindiDubbed", 
-   "adult"
-  ];
+  const categories = ["movies", "tvshow", "hindiDubbed", "adult"];
   const allData = {};
   let category = ""; // Declare category outside the loop
 
   try {
-    for (category of categories) { // Assign value to category here
+    for (category of categories) {
       const filePath = path.join(process.cwd(), "public", `${category}.json`);
       const jsonData = await fs.readFile(filePath, "utf-8");
       const parsedData = JSON.parse(jsonData);
@@ -35,7 +30,7 @@ export async function getStaticProps() {
       allData[category] = Array.isArray(parsedData) ? parsedData.slice(0, 5) : [];
     }
   } catch (error) {
-    console.error(`Error loading data for category ${category}:`, error); // category will be accessible here
+    console.error(`Error loading data for category ${category}:`, error);
   }
 
   return {
@@ -44,8 +39,6 @@ export async function getStaticProps() {
     },
   };
 }
-
-
 
 const soap2daySchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -137,13 +130,11 @@ const soap2daySchema = JSON.stringify({
   ],
 });
 
+// HomePage Component
 export default function HomePage({ allData }) {
- 
-
-  
   return (
     <>
-    <Head>
+       <Head>
     <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
 
     <link
@@ -252,84 +243,85 @@ export default function HomePage({ allData }) {
   
   </Head>
   <SocialSharing />
-  <div style={styles.container}>
-   
-  <header style={styles.hero}>
-    <div style={styles.heroImageContainer}>
-    <Image
-        src="/og_image.jpg"
-        alt="Hero Background"
-        // layout="fill"
-        objectFit="cover"
-        priority // Prioritize loading this image
-        width={1200} // Adjust the width according to your needs
-        height={750} // Adjust the height according to your needs
-        quality={90}
-        style={{
-          // height: "200px",
-          // width: "100%",
-          // objectFit: "cover",
-         
-          filter:
-          "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
-        }}
-        // className="w-full sm:w-32 sm:h-20 rounded-md mb-4 sm:mb-0"
-      />
-    </div>
-  <div style={styles.heroTextContainer}>
-    <h1 style={styles.heroTitle}>Welcome to Movies & Tv Shows™</h1>
-    <p style={styles.heroDescription}>
-      Online. Stream. Download. Your source for the latest updates across various categories.
-    </p>
-  </div>
-</header>
+      <div style={styles.container}>
+        {/* Hero Section */}
+        <header style={styles.hero}>
+          <div style={styles.heroImageContainer}>
+            <Image
+              src="/og_image.jpg"
+              alt="Hero Background"
+              objectFit="cover"
+              priority
+              width={1200}
+              height={750}
+              quality={90}
+              style={{
+                filter: "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
+              }}
+            />
+          </div>
+          <div style={styles.heroTextContainer}>
+            <h1 style={styles.heroTitle}>Welcome to Movies & TV Shows™</h1>
+            <p style={styles.heroDescription}>
+              Online. Stream. Download. Your source for the latest updates across various categories.
+            </p>
+          </div>
+        </header>
 
-     <div className="categories">
- {Object.keys(allData).map((category) => (
-   <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md"  style={{ marginBottom: "20px",}}> 
-     <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
-       style={{ textShadow: "3px 5px 5px #000", marginBottom:'20px'}}>
-       <Link href={`/${category}`} className="no-underline hover:no-underline">
-         {category.charAt(0).toUpperCase() + category.slice(1)}
-       </Link>
-     </h2>
-     <div className="category-content flex flex-col gap-8">
-       {allData[category].map((item, index) => (
-         <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
-           <Link href={`/${category}/${generateSlug(item.title)}`} className="no-underline hover:no-underline">
-             <div className="card-content flex flex-col md:flex-row gap-4">
-               <img
-                 src={item.image1 || item.image}
-                 alt={item.title}
-                 className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
-               />
-               <div className="card-text">
-                 <h3 className="card-title text-xl font-semibold mb-2">{item.title}</h3>
-                 <p className="card-description text-gray-600 text-base">
-                           {item.synopsis}
-                         </p>
-               </div>
-             </div>
-           </Link>
-           <small className="item-footer text-sm text-gray-500 mt-2">
-             {/* {item.date} - {item.time} | Courtesy: {item.courtesy} */}
-             Upload Date: {item.year}
-           </small>
-         </div>
-       ))}
-     </div>
-     <Link href={`/${category}`} className="no-underline hover:no-underline">
-           <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5 ">View All  {category.charAt(0).toUpperCase() + category.slice(1)} Articles →</div>
-     </Link>
-   </section>
- ))}
-</div>
-
-     </div>
-   </>
- );
+        {/* Categories Section */}
+        <div className="categories">
+          {Object.keys(allData).map((category) => (
+            <section
+              key={category}
+              className="category-section bg-gray-100 p-4 rounded-lg shadow-md"
+              style={{ marginBottom: "20px" }}
+            >
+              <h2
+                className="category-title text-4xl font-semibold text-blue-500 mb-5 "
+                style={{ textShadow: "3px 5px 5px #000", marginBottom: "20px" }}
+              >
+                <Link href={`/${category}`} className="no-underline hover:no-underline">
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </Link>
+              </h2>
+              <div className="category-content flex flex-col gap-8">
+                {allData[category].map((item, index) => (
+                  <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
+                    <Link href={`/${category}/${generateSlug(item.title)}`} className="no-underline hover:no-underline">
+                      <div className="card-content flex flex-col md:flex-row gap-4">
+                        <img
+                          src={item.image1 || item.image}
+                          alt={item.title}
+                          className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
+                        />
+                        <div className="card-text">
+                          <h3 className="card-title text-xl font-semibold mb-2"
+                            style={{ textShadow: "1px 2px 1px #000", marginBottom: "20px", fontSize:"25px" }}
+                          >{item.title}</h3>
+                          <p className="card-description text-gray-600 text-base">{item.synopsis}</p>
+                        </div>
+                      </div>
+                    </Link>
+                    <small className="item-footer text-lg text-gray-500 mt-2 font-bold  ">
+                      Upload Date: {item.year}
+                    </small>
+                  </div>
+                ))}
+              </div>
+              <Link href={`/${category}`} className="no-underline hover:no-underline">
+                <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5">
+                  View All {category.charAt(0).toUpperCase() + category.slice(1)} Articles →
+                </div>
+              </Link>
+            </section>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 }
 
+// Styles for the page
 const styles = {
   container: {
     maxWidth: "1200px",
@@ -338,34 +330,10 @@ const styles = {
     fontFamily: "'Poppins', sans-serif",
     color: "#333",
   },
-  // hero: {
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   // minHeight: "100vh", // Full viewport height for the hero section
-  //   backgroundImage: "url(https://a2zmovies.vercel.app/og_image.jpg)", // Background image
-  //   backgroundSize: "cover", // Make the image cover the entire area
-  //   backgroundPosition: "center", // Center the image
-  //   backgroundRepeat: "no-repeat", // Prevent image repetition
-  //   color: "#fff", // White text for readability
-  //   textAlign: "center", // Center align text
-  //   padding: "20px", // Add padding for spacing
-  //   boxSizing: "border-box", // Include padding in element's total width/height
-  // },
-
-  // Optional: Responsive tweaks for smaller screens
-  "@media (max-width: 768px)": {
-    hero: {
-      padding: "15px", // Adjust padding for smaller screens
-      backgroundPosition: "top", // Focus on the top part of the image
-    },
-  },
-   
   hero: {
     position: "relative",
     width: "100%",
-    height: "250px", // Reduced height for the hero section
+    height: "250px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -385,7 +353,7 @@ const styles = {
     textAlign: "center",
     color: "#fff",
     padding: "10px",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     borderRadius: "10px",
   },
   heroTitle: {
@@ -457,6 +425,7 @@ const styles = {
     fontSize: "0.9rem",
     color: "#777", // Slightly lighter grey for footer text
     marginTop: "10px",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
   },
   viewAll: {
     fontSize: "1rem",
@@ -466,3 +435,4 @@ const styles = {
     marginTop: "20px",
   },
 };
+
