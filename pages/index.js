@@ -525,107 +525,189 @@ export async function getStaticProps() {
   };
 }
 
-const soap2daySchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://moviesandtvshows.vercel.app/",
-      url: "https://moviesandtvshows.vercel.app/",
-      name: "Movies & Tv Shows™",
-      isPartOf: { "@id": "https://moviesandtvshows.vercel.app/#website" },
-      about: { "@id": "https://moviesandtvshows.vercel.app/#organization" },
-      primaryImageOfPage: {
-        "@id": "https://moviesandtvshows.vercel.app/#primaryimage",
+
+const uwatchfreeSchema = JSON.stringify([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'AtoZ Movies™ - Online. Stream. Download. ',
+    url: 'https://a2zmovies.vercel.app/',
+    image: ['https://a2zmovies.vercel.app/favicon.ico'],
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://a2zmovies.vercel.app/logo.png',
+      width: 280,
+      height: 80
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://a2zmovies.vercel.app/',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://a2zmovies.vercel.app/search?q={search_term_string}'
       },
-      image: { "@id": "https://moviesandtvshows.vercel.app/#primaryimage" },
-      thumbnailUrl: "https://moviesandtvshows.vercel.app/og_image.jpg",
-      datePublished: "2023-07-02T18:30:00+00:00",
-      dateModified: "2024-09-24T05:11:20+00:00",
-      breadcrumb: {
-        "@id": "https://moviesandtvshows.vercel.app/#breadcrumb",
-      },
-      inLanguage: "en-US",
-      potentialAction: [
-        {
-          "@type": "ReadAction",
-          target: ["https://moviesandtvshows.vercel.app/"],
-        },
-      ],
-    },
+      'query-input': 'required name=search_term_string'
+    }
+  }
+])
+
+const rankMathSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "ImageObject",
-      inLanguage: "en-US",
-      "@id": "https://moviesandtvshows.vercel.app/#primaryimage",
-      url: "https://moviesandtvshows.vercel.app/og_image.jpg",
-      contentUrl: "https://moviesandtvshows.vercel.app/og_image.jpg",
-      width: 1280,
-      height: 720,
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://moviesandtvshows.vercel.app/#breadcrumb",
-      itemListElement: [{ "@type": "ListItem", position: 1, name: "Home" }],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://moviesandtvshows.vercel.app/#website",
-      url: "https://moviesandtvshows.vercel.app/",
-      name: "Movies & Tv Shows™",
-      description: "",
-      publisher: {
-        "@id": "https://moviesandtvshows.vercel.app/#organization",
-      },
-      potentialAction: [
-        {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate:
-              "https://moviesandtvshows.vercel.app/?s={search_term_string}",
-          },
-          "query-input": {
-            "@type": "PropertyValueSpecification",
-            valueRequired: true,
-            valueName: "search_term_string",
-          },
-        },
-      ],
-      inLanguage: "en-US",
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://moviesandtvshows.vercel.app/#organization",
-      name: "Movies & Tv Shows™",
-      url: "https://moviesandtvshows.vercel.app/",
-      logo: {
-        "@type": "ImageObject",
-        inLanguage: "en-US",
-        "@id": "https://moviesandtvshows.vercel.app/#/schema/logo/image/",
-        url: "https://moviesandtvshows.vercel.app/logo.png",
-        contentUrl: "https://moviesandtvshows.vercel.app/logo.png",
-        width: 280,
-        height: 100,
-        caption: "Movies & Tv Shows™",
-      },
+      '@type': 'Person',
+      '@id': 'https://gravatar.com/drtrailer2022',
+      name: 'Dr Trailer',
+      url: 'https://gravatar.com/drtrailer2022',
       image: {
-        "@id": "https://moviesandtvshows.vercel.app/#/schema/logo/image/",
-      },
+        '@type': 'ImageObject',
+        '@id': 'https://gravatar.com/drtrailer2022',
+        url: 'https://gravatar.com/drtrailer2022',
+        caption: 'Dr Trailer',
+        inLanguage: 'en-US'
+      }
     },
-  ],
-});
-// HomePage Component
+    {
+      '@type': 'Organization',
+      '@id': 'https://a2zmovies.vercel.app/#organization',
+      name: 'AtoZ Movies™ - Online. Stream. Download. ',
+      url: 'https://a2zmovies.vercel.app'
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://a2zmovies.vercel.app/#website',
+      url: 'https://a2zmovies.vercel.app',
+      name: 'AtoZ Movies™ - Online. Stream. Download. ',
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://a2zmovies.vercel.app/#organization'
+      },
+   
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://a2zmovies.vercel.app/#webpage',
+      url: 'https://a2zmovies.vercel.app/',
+      name: 'Movie',
+      datePublished: '2024-01-13T13:00:00+00:00',
+      dateModified: '2024-01-13T13:13:00+00:00',
+      about: {
+        '@type': 'Person',
+        '@id': 'https://gravatar.com/drtrailer2022',
+        name: 'Dr Trailer',
+        url: 'https://gravatar.com/drtrailer2022',
+        image: {
+          '@type': 'ImageObject',
+          '@id': 'https://gravatar.com/drtrailer2022',
+          url: 'https://gravatar.com/drtrailer2022',
+          caption: 'Dr Trailer',
+          inLanguage: 'en-US'
+        }
+      },
+      isPartOf: {
+        '@id': 'https://a2zmovies.vercel.app/#website'
+      },
+      inLanguage: 'en-US',
+      mainEntity: [
+        {
+          '@type': 'Article',
+          '@id': 'https://a2zmovies.vercel.app/',
+          url: 'https://a2zmovies.vercel.app/',
+          headline: 'AtoZ Movies™ - Online. Stream. Download. ',
+          datePublished: '2024-01-13T13:00:00+00:00',
+          dateModified: '2024-01-13T13:13:00+00:00',
+          author: {
+            '@type': 'Person',
+            '@id': 'https://gravatar.com/drtrailer2022',
+            name: 'Dr Trailer',
+            url: 'https://gravatar.com/drtrailer2022',
+            image: {
+              '@type': 'ImageObject',
+              '@id': 'https://gravatar.com/drtrailer2022',
+              url: 'https://gravatar.com/drtrailer2022',
+              caption: 'Dr Trailer',
+              inLanguage: 'en-US'
+            }
+          },
+          publisher: {
+            '@type': 'Organization',
+            '@id': 'https://a2zmovies.vercel.app/#organization',
+            name: 'AtoZ Movies™ - Online. Stream. Download. ',
+            url: 'https://a2zmovies.vercel.app'
+          }
+        },
+        {
+          '@type': 'Article',
+          '@id': 'https://a2zmovies.vercel.app/',
+          url: 'https://a2zmovies.vercel.app/',
+          headline: 'AtoZ Movies™ - Online. Stream. Download. ',
+          datePublished: '2024-01-13T13:00:00+00:00',
+          dateModified: '2024-01-13T13:13:00+00:00',
+          author: {
+            '@type': 'Person',
+            '@id': 'https://gravatar.com/drtrailer2022',
+            name: 'Dr Trailer',
+            url: 'https://gravatar.com/drtrailer2022',
+            image: {
+              '@type': 'ImageObject',
+              '@id': 'https://gravatar.com/drtrailer2022',
+              url: 'https://gravatar.com/drtrailer2022',
+              caption: 'Dr Trailer',
+              inLanguage: 'en-US'
+            }
+          },
+          publisher: {
+            '@type': 'Organization',
+            '@id': 'https://a2zmovies.vercel.app/#organization',
+            name: 'AtoZ Movies™ - Online. Stream. Download. ',
+            url: 'https://a2zmovies.vercel.app'
+          }
+        },
+        {
+          '@type': 'Article',
+          '@id': 'https://a2zmovies.vercel.app/',
+          url: 'https://a2zmovies.vercel.app/',
+          headline: 'AtoZ Movies™ - Online. Stream. Download. ',
+          datePublished: '2024-01-13T13:00:00+00:00',
+          dateModified: '2024-01-13T13:13:00+00:00',
+          author: {
+            '@type': 'Person',
+            '@id': 'https://gravatar.com/drtrailer2022',
+            name: 'Dr Trailer',
+            url: 'https://gravatar.com/drtrailer2022',
+            image: {
+              '@type': 'ImageObject',
+              '@id': 'https://gravatar.com/drtrailer2022',
+              url: 'https://gravatar.com/drtrailer2022',
+              caption: 'Dr Trailer',
+              inLanguage: 'en-US'
+            }
+          }
+        }
+      ]
+    }
+  ]
+})
+
+
 export default function HomePage({ allData }) {
+ 
+
+  
   return (
     <>
-     <Head>
-    <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
+    <Head>
+    <title> AtoZ Movies™ - Online. Stream. Download.</title>
 
     <link
       rel="sitemap"
       type="application/xml"
       title="Sitemap"
-      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+      href="https://a2zmovies.vercel.app/sitemap.xml"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -649,42 +731,42 @@ export default function HomePage({ allData }) {
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="googlebot" content="index,follow" />
     <meta name="revisit-after" content="1 days" />
-    <m eta name="referrer" content="origin" />
+    <meta name="referrer" content="origin" />
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="keywords" content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free" />
+    <meta name="keywords" content="a2zmovies,atozmovies,a to z movies,a-z movies,watch free movies,watch movies online,download movies,watch full movies,watch hd movies" />
     <meta
       property="og:description"
-      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+      content="Stream HD movies and TV series for free on AtoZ Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration."
     />
     <meta
       name="description"
-      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+      content="Stream HD movies and TV series for free on AtoZ Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration."
     />
-    <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
+    <link rel="canonical" href="https://a2zmovies.vercel.app/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+      content=" AtoZ Movies™ - Online. Stream. Download. "
     />
-    <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
+    <meta property="og:url" content="https://a2zmovies.vercel.app" />
     <meta
       property="og:site_name"
-      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+      content=" AtoZ Movies™ - Online. Stream. Download. "
     />
     <meta
       property="og:image"
-      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+      content="https://a2zmovies.vercel.app/og_image.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpg" />
     <meta
       name="application-name"
-      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+      content=" AtoZ Movies™ - Online. Stream. Download. "
     />
     <meta
       property="article:modified_time"
@@ -694,24 +776,24 @@ export default function HomePage({ allData }) {
       rel="sitemap"
       type="application/xml"
       title="Sitemap"
-      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+      href="https://a2zmovies.vercel.app/sitemap.xml"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content=" Movies & Tv Shows™ - Online. Stream. Download."
+      content=" AtoZ Movies™ - Online. Stream. Download."
     />
     <meta
       name="twitter:description"
-      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+      content="Stream HD movies and TV series for free on AtoZ Movies™. Explore, stream, and download full-length movies and shows in HD quality without registration."
     />
     <meta
       name="twitter:image"
-      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+      content="https://a2zmovies.vercel.app/og_image.jpg"
     />
     <meta
       name="google-site-verification"
-      content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+      content="BZNZaUyoS1nXyRfa99f4VJ3ABKZUZhkKB0pZ3DU3L8s"
     />
 
     <meta
@@ -723,13 +805,15 @@ export default function HomePage({ allData }) {
       content="dm3bs67ukdegz9qik"
     />
     <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
- 
     <script
     type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: soap2daySchema }}
+    dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
+  />  
+   <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: rankMathSchema }}
   />
   </Head>
-
   <SocialSharing />
     <div style={styles.container}>
    
@@ -756,14 +840,64 @@ export default function HomePage({ allData }) {
       />
     </div>
   <div style={styles.heroTextContainer}>
-    <h1 style={styles.heroTitle}>Welcome to Movies & Tv Shows™</h1>
+    <h1 style={styles.heroTitle}>Welcome to AtoZ Movies™</h1>
     <p style={styles.heroDescription}>
       Online. Stream. Download. Your source for the latest updates across various categories.
     </p>
   </div>
 </header>
-
-   <div className="categories ">
+      <div
+          className="shadow-lg flex items-center justify-center"
+          role="navigation"
+        >
+          <ul
+            id="menu-header-menu"
+            className="menu flex flex-wrap justify-center"
+          >
+           
+            <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+              <li id="menu-item-35" className="menu-home active">
+                <a
+                  href="../movies/"
+                  className="text-blue-500 font-bold text-xl hover:no-underline"
+                >
+                  Movies<span className="p"></span>
+                </a>
+              </li>
+            </button>
+            <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+              <li id="menu-item-248" className="menu-operating-systems">
+                <a
+                  href="../tvshow/"
+                  className="text-blue-500 font-bold text-xl hover:no-underline"
+                >
+                  Tv Show<span className="p"></span>
+                </a>
+              </li>
+            </button>          
+            <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+              <li id="menu-item-11605" className="menu-3dcad">
+                <a
+                  href="../adult/"
+                  className="text-blue-500 font-bold text-xl hover:no-underline"
+                >
+                  Adult<span className="p"></span>
+                </a>
+              </li>
+            </button>
+            <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+              <li id="menu-item-248" className="menu-operating-systems">
+                <a
+                  href="../hindiDubbed/"
+                  className="text-blue-500 font-bold text-xl hover:no-underline"
+                >
+                  Hindi Dubed<span className="p"></span>
+                </a>
+              </li>
+            </button>
+          </ul>
+        </div>
+      <div className="categories ">
   {Object.keys(allData).map((category) => (
     <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md "  style={{ marginBottom: "20px",}}> 
       <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
@@ -820,7 +954,6 @@ export default function HomePage({ allData }) {
   );
 }
 
-// Styles for the page
 const styles = {
   container: {
     maxWidth: "1200px",
@@ -829,10 +962,34 @@ const styles = {
     fontFamily: "'Poppins', sans-serif",
     color: "#333",
   },
+  // hero: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   // minHeight: "100vh", // Full viewport height for the hero section
+  //   backgroundImage: "url(https://a2zmovies.vercel.app/og_image.jpg)", // Background image
+  //   backgroundSize: "cover", // Make the image cover the entire area
+  //   backgroundPosition: "center", // Center the image
+  //   backgroundRepeat: "no-repeat", // Prevent image repetition
+  //   color: "#fff", // White text for readability
+  //   textAlign: "center", // Center align text
+  //   padding: "20px", // Add padding for spacing
+  //   boxSizing: "border-box", // Include padding in element's total width/height
+  // },
+
+  // Optional: Responsive tweaks for smaller screens
+  "@media (max-width: 768px)": {
+    hero: {
+      padding: "15px", // Adjust padding for smaller screens
+      backgroundPosition: "top", // Focus on the top part of the image
+    },
+  },
+   
   hero: {
     position: "relative",
     width: "100%",
-    height: "250px",
+    height: "250px", // Reduced height for the hero section
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -852,7 +1009,7 @@ const styles = {
     textAlign: "center",
     color: "#fff",
     padding: "10px",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
     borderRadius: "10px",
   },
   heroTitle: {
@@ -883,6 +1040,7 @@ const styles = {
     fontWeight: "600",
     marginBottom: "20px",
     color: "#007bff", // Blue color for category title
+    
   },
   categoryContent: {
     display: "flex",
@@ -923,7 +1081,6 @@ const styles = {
     fontSize: "0.9rem",
     color: "#777", // Slightly lighter grey for footer text
     marginTop: "10px",
-    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
   },
   viewAll: {
     fontSize: "1rem",
@@ -931,30 +1088,6 @@ const styles = {
     color: "#007bff", // Blue color for "view all" link
     textDecoration: "none",
     marginTop: "20px",
-  },
-  // Media Query for Responsive Layout
-  '@media (max-width: 768px)': {
-    container: {
-      padding: "10px",
-    },
-    hero: {
-      height: "200px",
-    },
-    card: {
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    cardImage: {
-      width: "100%",
-      height: "auto",
-    },
-    cardContent: {
-      padding: "10px",
-      textAlign: "center",
-    },
-    heroTextContainer: {
-      padding: "15px",
-    },
   },
 };
 
