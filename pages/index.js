@@ -40,13 +40,210 @@ export async function getStaticProps() {
   };
 }
 
+const soap2daySchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://moviesandtvshows.vercel.app/",
+      url: "https://moviesandtvshows.vercel.app/",
+      name: "Movies & Tv Shows™",
+      isPartOf: { "@id": "https://moviesandtvshows.vercel.app/#website" },
+      about: { "@id": "https://moviesandtvshows.vercel.app/#organization" },
+      primaryImageOfPage: {
+        "@id": "https://moviesandtvshows.vercel.app/#primaryimage",
+      },
+      image: { "@id": "https://moviesandtvshows.vercel.app/#primaryimage" },
+      thumbnailUrl: "https://moviesandtvshows.vercel.app/og_image.jpg",
+      datePublished: "2023-07-02T18:30:00+00:00",
+      dateModified: "2024-09-24T05:11:20+00:00",
+      breadcrumb: {
+        "@id": "https://moviesandtvshows.vercel.app/#breadcrumb",
+      },
+      inLanguage: "en-US",
+      potentialAction: [
+        {
+          "@type": "ReadAction",
+          target: ["https://moviesandtvshows.vercel.app/"],
+        },
+      ],
+    },
+    {
+      "@type": "ImageObject",
+      inLanguage: "en-US",
+      "@id": "https://moviesandtvshows.vercel.app/#primaryimage",
+      url: "https://moviesandtvshows.vercel.app/og_image.jpg",
+      contentUrl: "https://moviesandtvshows.vercel.app/og_image.jpg",
+      width: 1280,
+      height: 720,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://moviesandtvshows.vercel.app/#breadcrumb",
+      itemListElement: [{ "@type": "ListItem", position: 1, name: "Home" }],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://moviesandtvshows.vercel.app/#website",
+      url: "https://moviesandtvshows.vercel.app/",
+      name: "Movies & Tv Shows™",
+      description: "",
+      publisher: {
+        "@id": "https://moviesandtvshows.vercel.app/#organization",
+      },
+      potentialAction: [
+        {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate:
+              "https://moviesandtvshows.vercel.app/?s={search_term_string}",
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            valueRequired: true,
+            valueName: "search_term_string",
+          },
+        },
+      ],
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://moviesandtvshows.vercel.app/#organization",
+      name: "Movies & Tv Shows™",
+      url: "https://moviesandtvshows.vercel.app/",
+      logo: {
+        "@type": "ImageObject",
+        inLanguage: "en-US",
+        "@id": "https://moviesandtvshows.vercel.app/#/schema/logo/image/",
+        url: "https://moviesandtvshows.vercel.app/logo.png",
+        contentUrl: "https://moviesandtvshows.vercel.app/logo.png",
+        width: 280,
+        height: 100,
+        caption: "Movies & Tv Shows™",
+      },
+      image: {
+        "@id": "https://moviesandtvshows.vercel.app/#/schema/logo/image/",
+      },
+    },
+  ],
+});
 // HomePage Component
 export default function HomePage({ allData }) {
   return (
     <>
-      <Head>
-        <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
-      </Head>
+     <Head>
+    <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
+
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="revisit-after" content="1 days" />
+    <m eta name="referrer" content="origin" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="keywords" content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free" />
+    <meta
+      property="og:description"
+      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+    />
+    <meta
+      name="description"
+      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+    />
+    <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+    />
+    <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
+    <meta
+      property="og:site_name"
+      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+    />
+    <meta
+      property="og:image"
+      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta
+      name="application-name"
+      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+    />
+    <meta
+      property="article:modified_time"
+      content="2024-01-01T13:13:13+00:00"
+    />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content=" Movies & Tv Shows™ - Online. Stream. Download."
+    />
+    <meta
+      name="twitter:description"
+      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+    />
+    <meta
+      name="twitter:image"
+      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+    />
+    <meta
+      name="google-site-verification"
+      content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+    />
+
+    <meta
+      name="facebook-domain-verification"
+      content="du918bycikmo1jw78wcl9ih6ziphd7"
+    />
+    <meta
+      name="dailymotion-domain-verification"
+      content="dm3bs67ukdegz9qik"
+    />
+    <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
+ 
+    <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: soap2daySchema }}
+  />
+  </Head>
       <SocialSharing />
       <div style={styles.container}>
         {/* Hero Section */}
