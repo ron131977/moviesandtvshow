@@ -479,6 +479,7 @@
 
 
 
+
 import React, { useState, useEffect } from "react";
 import path from "path";
 import fs from "fs/promises";
@@ -525,6 +526,7 @@ export async function getStaticProps() {
     },
   };
 }
+
 
 
 const soap2daySchema = JSON.stringify({
@@ -624,14 +626,14 @@ export default function HomePage({ allData }) {
   
   return (
     <>
-         <Head>
+    <Head>
     <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
 
     <link
       rel="sitemap"
       type="application/xml"
       title="Sitemap"
-      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+      href="https://a2zmovies.vercel.app/sitemap.xml"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -655,12 +657,12 @@ export default function HomePage({ allData }) {
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="googlebot" content="index,follow" />
     <meta name="revisit-after" content="1 days" />
-    <m eta name="referrer" content="origin" />
+    <meta name="referrer" content="origin" />
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="keywords" content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free" />
+    <meta name="keywords" content="a2zmovies,atozmovies,a to z movies,a-z movies,watch free movies,watch movies online,download movies,watch full movies,watch hd movies" />
     <meta
       property="og:description"
       content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
@@ -669,21 +671,21 @@ export default function HomePage({ allData }) {
       name="description"
       content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
     />
-    <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
+    <link rel="canonical" href="https://a2zmovies.vercel.app/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
       content=" Movies & Tv Shows™ - Online. Stream. Download. "
     />
-    <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
+    <meta property="og:url" content="https://a2zmovies.vercel.app" />
     <meta
       property="og:site_name"
       content=" Movies & Tv Shows™ - Online. Stream. Download. "
     />
     <meta
       property="og:image"
-      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+      content="https://a2zmovies.vercel.app/og_image.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -700,7 +702,7 @@ export default function HomePage({ allData }) {
       rel="sitemap"
       type="application/xml"
       title="Sitemap"
-      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+      href="https://a2zmovies.vercel.app/sitemap.xml"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -713,11 +715,11 @@ export default function HomePage({ allData }) {
     />
     <meta
       name="twitter:image"
-      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+      content="https://a2zmovies.vercel.app/og_image.jpg"
     />
     <meta
       name="google-site-verification"
-      content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+      content="BZNZaUyoS1nXyRfa99f4VJ3ABKZUZhkKB0pZ3DU3L8s"
     />
 
     <meta
@@ -729,13 +731,12 @@ export default function HomePage({ allData }) {
       content="dm3bs67ukdegz9qik"
     />
     <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
- 
-    <script
+   
+   <script
     type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: soap2daySchema }}
   />
   </Head>
-
   <SocialSharing />
     <div style={styles.container}>
    
@@ -768,7 +769,7 @@ export default function HomePage({ allData }) {
     </p>
   </div>
 </header>
-<div className="categories ">
+      <div className="categories ">
   {Object.keys(allData).map((category) => (
     <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md "  style={{ marginBottom: "20px",}}> 
       <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
@@ -824,7 +825,6 @@ export default function HomePage({ allData }) {
     </>
   );
 }
-
 // Styles for the page
 const styles = {
   container: {
@@ -962,8 +962,6 @@ const styles = {
     },
   },
 };
-
-
 
 
 
