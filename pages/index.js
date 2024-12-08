@@ -768,7 +768,7 @@ export default function HomePage({ allData }) {
     </p>
   </div>
 </header>
-      <div className="categories ">
+<div className="categories ">
   {Object.keys(allData).map((category) => (
     <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md "  style={{ marginBottom: "20px",}}> 
       <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
