@@ -742,7 +742,7 @@ export default function HomePage({ allData }) {
    
    <header style={styles.hero}>
    <div style={styles.heroImageContainer}>
-   <Image
+   {/* <Image
        src="/og_image.jpg"
        alt="Hero Background"
        // layout="fill"
@@ -760,7 +760,7 @@ export default function HomePage({ allData }) {
          "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
        }}
        // className="w-full sm:w-32 sm:h-20 rounded-md mb-4 sm:mb-0"
-     />
+     /> */}
    </div>
  <div style={styles.heroTextContainer}>
    <h1 style={styles.heroTitle}>Welcome to Movies & Tv Shows™</h1>
