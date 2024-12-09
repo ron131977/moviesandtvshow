@@ -1,183 +1,240 @@
-/* Styles for TabList */
-.tabList {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  justify-content: center; /* Center align the tab set */
-  margin-bottom: 20px; /* Add margin bottom to create space */
+/* General container for centering content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
 }
 
-/* Styles for individual Tab */
-.tab {
-  padding: 10px 20px;
-  margin-right: 15px; /* Add margin-right for gap between tabs */
-  color: white;
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+.heroTextContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+/* Navigation Section */
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.navRow {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.navLink {
+  padding: 12px 25px;
+  border: 1px solid #007bff;
   border-radius: 5px;
+  background: #fff;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
   cursor: pointer;
 }
 
-/* Add gap between tabs */
-.tab:not(:last-child) {
-  margin-right: 15px;
-}
-
-/* Styles for Server 01 */
-.server1 {
-  background-color: #15f4ee;
-}
-
-/* Styles for Server 02 */
-.server2 {
-  background-color: #28a745;
-}
-
-/* Styles for Server 03 */
-.server3 {
-  background-color: #dc3545;
-}
-
-
-
-.imageContainer {
-  display: flex;
-  justify-content: space-between; /* Distribute images evenly */
-  margin-top: 20px; /* Adjust margin top as needed */
-}
-
-/* .imageGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 10px;
-} */
-.imageGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
-  grid-gap: 10px; /* Gap between grid items */
-}
-
-@media (min-width: 768px) {
-  .imageGrid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on screens wider than 768px */
-  }
-}
-
-.image {
-  width: 200px; /* Adjust image size */
-  height: 200px;
-  border-radius: 50%; /* Make images circular */
-  border: 2px solid #15f4ee; /* Add border with color */
-}
-
-/* .animate-blink {
-  animation: blink-animation 10s infinite;
-}
-
-@keyframes blink-animation {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
-
-@keyframes blink {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-.animate-blink {
-  animation-duration: 4s; /* Adjust the duration to make it slower */
-  animation-iteration-count: infinite;
-}
-/* Common styles */
-.episode-button {
-  padding: 8px 16px;
-  border-radius: 20px;
-  background: linear-gradient(to bottom right, #7e00f3, #00c1ff);
+.navLink:hover {
+  background: #007bff;
   color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  outline: none;
-  border: none;
 }
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+
+/* Category Section */
+.categorySection {
+  margin-bottom: 30px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categoryTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.categoryContent {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.3s ease-in-out;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
 }
 
-.loading-overlay.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* styles/Home.module.css */
-
-
-.popup-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup {
-  background-color: #fff;
-  padding: 20px;
+/* Cards */
+.card {
+  background: #fff;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: calc(33.3333% - 20px); /* 3 cards per row */
+  margin-bottom: 20px;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.card img {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  height: auto;
+  border-radius: 8px;
 }
 
+.cardText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.itemFooter {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* View All Button */
+.viewAll {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+
+/* For tablets (landscape and smaller) */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .navRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    width: calc(50% - 20px); /* 2 cards per row */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroDescription {
+    font-size: 0.95rem;
+  }
+
+  .navRow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card {
+    width: 100%; /* 1 card per row */
+    padding: 10px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .viewAll {
+    font-size: 1rem;
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 8px;
+  }
+
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 0.9rem;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+
+  .cardDescription {
+    font-size: 0.8rem;
+  }
+
+  .viewAll {
+    font-size: 0.9rem;
+  }
+  
+}
