@@ -467,7 +467,6 @@
 //     },
 //   },
 // };
-
 import React from "react";
 import path from "path";
 import fs from "fs/promises";
@@ -476,6 +475,7 @@ import Head from "next/head";
 import Image from "next/image";
 import SocialSharing from "../components/SocialSharing";
 
+// Utility function to generate slugs for the title
 function generateSlug(title) {
   return title
     .toLowerCase()
@@ -483,6 +483,7 @@ function generateSlug(title) {
     .replace(/^-+|-+$/g, "");
 }
 
+// Static props to load data for categories
 export async function getStaticProps() {
   const categories = ["movies", "tvshow", "hindiDubbed", "adult"];
   const allData = {};
@@ -508,6 +509,7 @@ export async function getStaticProps() {
   };
 }
 
+// JSON-LD Schema for SEO
 const soap2daySchema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -598,12 +600,12 @@ const soap2daySchema = JSON.stringify({
   ],
 });
 
+// Main HomePage Component
 export default function HomePage({ allData }) {
   return (
     <>
       <Head>
-        <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
-
+        <title>Movies & Tv Shows™ - Online. Stream. Download.</title>
         <link
           rel="sitemap"
           type="application/xml"
@@ -611,105 +613,11 @@ export default function HomePage({ allData }) {
           href="https://moviesandtvshows.vercel.app/sitemap.xml"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="googlebot" content="index,follow" />
-        <meta name="revisit-after" content="1 days" />
-        <m eta name="referrer" content="origin" />
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
-        <meta
-          name="keywords"
-          content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free"
-        />
-        <meta
-          property="og:description"
-          content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-        />
+        <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
         />
-        <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content=" Movies & Tv Shows™ - Online. Stream. Download. "
-        />
-        <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
-        <meta
-          property="og:site_name"
-          content=" Movies & Tv Shows™ - Online. Stream. Download. "
-        />
-        <meta
-          property="og:image"
-          content="https://moviesandtvshows.vercel.app/og_image.jpg"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/jpg" />
-        <meta
-          name="application-name"
-          content=" Movies & Tv Shows™ - Online. Stream. Download. "
-        />
-        <meta
-          property="article:modified_time"
-          content="2024-01-01T13:13:13+00:00"
-        />
-        <link
-          rel="sitemap"
-          type="application/xml"
-          title="Sitemap"
-          href="https://moviesandtvshows.vercel.app/sitemap.xml"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content=" Movies & Tv Shows™ - Online. Stream. Download."
-        />
-        <meta
-          name="twitter:description"
-          content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-        />
-        <meta
-          name="twitter:image"
-          content="https://moviesandtvshows.vercel.app/og_image.jpg"
-        />
-        <meta
-          name="google-site-verification"
-          content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
-        />
-
-        <meta
-          name="facebook-domain-verification"
-          content="du918bycikmo1jw78wcl9ih6ziphd7"
-        />
-        <meta
-          name="dailymotion-domain-verification"
-          content="dm3bs67ukdegz9qik"
-        />
-        <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: soap2daySchema }}
@@ -719,9 +627,7 @@ export default function HomePage({ allData }) {
       <div className="container mx-auto px-4 py-6">
         <header className="hero text-center bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 text-white p-10">
           <div className="max-w-lg mx-auto">
-            <h1 className="text-3xl font-bold">
-              Welcome to Movies & TV Shows™
-            </h1>
+            <h1 className="text-3xl font-bold">Welcome to Movies & TV Shows™</h1>
             <p className="text-lg">
               Online. Stream. Download. Your source for the latest updates
               across various categories.
@@ -732,15 +638,18 @@ export default function HomePage({ allData }) {
         <main>
           {Object.keys(allData).map((category) => (
             <section key={category} className="category-section mb-12">
-              <h2 className="text-4xl font-semibold mb-4"   style={{ textShadow: "2px 1px 2px #000", marginBottom: "20px" }}>
+              <h2
+                className="text-4xl font-semibold mb-4"
+                style={{ textShadow: "2px 1px 2px #000" }}
+              >
                 <Link
                   href={`/${category}`}
-                  className="text-blue-500 hover:no-underline font-bold" 
+                  className="text-blue-500 hover:no-underline font-bold"
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </Link>
               </h2>
-              <div className="category-content grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"  >
+              <div className="category-content grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {allData[category].map((item, index) => (
                   <div
                     key={index}
@@ -750,17 +659,17 @@ export default function HomePage({ allData }) {
                       href={`/${category}/${generateSlug(item.title)}`}
                       className="hover:no-underline"
                     >
-                     <div className="card-content flex flex-col justify-between h-full">
-  <div className="card-text mb-4">
-    <h3 className="text-xl font-semibold">{item.title}</h3>
-    <p className="text-sm font-bold text-black line-clamp-3">
-      {item.synopsis}
-    </p>
-    <div className="item-footer text-xs font-semibold text-black mt-2">
-      <span>Year: {item.year}</span> | <span>Language: {item.language}</span>
-    </div>
-  </div>
-
+                      <div className="card-content flex flex-col justify-between h-full">
+                        <div className="card-text mb-4">
+                          <h3 className="text-xl font-semibold">{item.title}</h3>
+                          <p className="text-sm font-bold text-black line-clamp-3">
+                            {item.synopsis}
+                          </p>
+                          <div className="item-footer text-xs font-semibold text-black mt-2">
+                            <span>Year: {item.year}</span> |{" "}
+                            <span>Language: {item.language}</span>
+                          </div>
+                        </div>
 
                         <div className="image-container">
                           <Image
@@ -770,7 +679,7 @@ export default function HomePage({ allData }) {
                             height={169}
                             layout="intrinsic"
                             priority={index === 0}
-                            quality={85}
+                            quality={90}
                           />
                         </div>
                       </div>
