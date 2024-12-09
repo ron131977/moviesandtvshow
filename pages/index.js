@@ -133,117 +133,117 @@
 // export default function HomePage({ allData }) {
 //   return (
 //     <>
-  //    <Head>
-  //   <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
+//    <Head>
+//   <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
 
-  //   <link
-  //     rel="sitemap"
-  //     type="application/xml"
-  //     title="Sitemap"
-  //     href="https://moviesandtvshows.vercel.app/sitemap.xml"
-  //   />
-  //   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  //   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  //   <link
-  //     rel="apple-touch-icon"
-  //     sizes="180x180"
-  //     href="/apple-touch-icon.png"
-  //   />
-  //   <link
-  //     rel="icon"
-  //     type="image/png"
-  //     sizes="32x32"
-  //     href="/favicon-32x32.png"
-  //   />
-  //   <link
-  //     rel="icon"
-  //     type="image/png"
-  //     sizes="16x16"
-  //     href="/favicon-16x16.png"
-  //   />
-  //   <link rel="manifest" href="/site.webmanifest" />
-  //   <meta name="googlebot" content="index,follow" />
-  //   <meta name="revisit-after" content="1 days" />
-  //   <m eta name="referrer" content="origin" />
-  //   <meta
-  //     name="robots"
-  //     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-  //   />
-  //   <meta name="keywords" content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free" />
-  //   <meta
-  //     property="og:description"
-  //     content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-  //   />
-  //   <meta
-  //     name="description"
-  //     content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-  //   />
-  //   <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
-  //   <meta property="og:locale" content="en_US" />
-  //   <meta property="og:type" content="website" />
-  //   <meta
-  //     property="og:title"
-  //     content=" Movies & Tv Shows™ - Online. Stream. Download. "
-  //   />
-  //   <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
-  //   <meta
-  //     property="og:site_name"
-  //     content=" Movies & Tv Shows™ - Online. Stream. Download. "
-  //   />
-  //   <meta
-  //     property="og:image"
-  //     content="https://moviesandtvshows.vercel.app/og_image.jpg"
-  //   />
-  //   <meta property="og:image:width" content="1200" />
-  //   <meta property="og:image:height" content="630" />
-  //   <meta property="og:image:type" content="image/jpg" />
-  //   <meta
-  //     name="application-name"
-  //     content=" Movies & Tv Shows™ - Online. Stream. Download. "
-  //   />
-  //   <meta
-  //     property="article:modified_time"
-  //     content="2024-01-01T13:13:13+00:00"
-  //   />
-  //   <link
-  //     rel="sitemap"
-  //     type="application/xml"
-  //     title="Sitemap"
-  //     href="https://moviesandtvshows.vercel.app/sitemap.xml"
-  //   />
-  //   <meta name="twitter:card" content="summary_large_image" />
-  //   <meta
-  //     name="twitter:title"
-  //     content=" Movies & Tv Shows™ - Online. Stream. Download."
-  //   />
-  //   <meta
-  //     name="twitter:description"
-  //     content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-  //   />
-  //   <meta
-  //     name="twitter:image"
-  //     content="https://moviesandtvshows.vercel.app/og_image.jpg"
-  //   />
-  //   <meta
-  //     name="google-site-verification"
-  //     content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
-  //   />
+//   <link
+//     rel="sitemap"
+//     type="application/xml"
+//     title="Sitemap"
+//     href="https://moviesandtvshows.vercel.app/sitemap.xml"
+//   />
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+//   <link
+//     rel="apple-touch-icon"
+//     sizes="180x180"
+//     href="/apple-touch-icon.png"
+//   />
+//   <link
+//     rel="icon"
+//     type="image/png"
+//     sizes="32x32"
+//     href="/favicon-32x32.png"
+//   />
+//   <link
+//     rel="icon"
+//     type="image/png"
+//     sizes="16x16"
+//     href="/favicon-16x16.png"
+//   />
+//   <link rel="manifest" href="/site.webmanifest" />
+//   <meta name="googlebot" content="index,follow" />
+//   <meta name="revisit-after" content="1 days" />
+//   <m eta name="referrer" content="origin" />
+//   <meta
+//     name="robots"
+//     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+//   />
+//   <meta name="keywords" content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free" />
+//   <meta
+//     property="og:description"
+//     content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+//   />
+//   <meta
+//     name="description"
+//     content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+//   />
+//   <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
+//   <meta property="og:locale" content="en_US" />
+//   <meta property="og:type" content="website" />
+//   <meta
+//     property="og:title"
+//     content=" Movies & Tv Shows™ - Online. Stream. Download. "
+//   />
+//   <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
+//   <meta
+//     property="og:site_name"
+//     content=" Movies & Tv Shows™ - Online. Stream. Download. "
+//   />
+//   <meta
+//     property="og:image"
+//     content="https://moviesandtvshows.vercel.app/og_image.jpg"
+//   />
+//   <meta property="og:image:width" content="1200" />
+//   <meta property="og:image:height" content="630" />
+//   <meta property="og:image:type" content="image/jpg" />
+//   <meta
+//     name="application-name"
+//     content=" Movies & Tv Shows™ - Online. Stream. Download. "
+//   />
+//   <meta
+//     property="article:modified_time"
+//     content="2024-01-01T13:13:13+00:00"
+//   />
+//   <link
+//     rel="sitemap"
+//     type="application/xml"
+//     title="Sitemap"
+//     href="https://moviesandtvshows.vercel.app/sitemap.xml"
+//   />
+//   <meta name="twitter:card" content="summary_large_image" />
+//   <meta
+//     name="twitter:title"
+//     content=" Movies & Tv Shows™ - Online. Stream. Download."
+//   />
+//   <meta
+//     name="twitter:description"
+//     content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+//   />
+//   <meta
+//     name="twitter:image"
+//     content="https://moviesandtvshows.vercel.app/og_image.jpg"
+//   />
+//   <meta
+//     name="google-site-verification"
+//     content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+//   />
 
-  //   <meta
-  //     name="facebook-domain-verification"
-  //     content="du918bycikmo1jw78wcl9ih6ziphd7"
-  //   />
-  //   <meta
-  //     name="dailymotion-domain-verification"
-  //     content="dm3bs67ukdegz9qik"
-  //   />
-  //   <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
- 
-  //   <script
-  //   type="application/ld+json"
-  //   dangerouslySetInnerHTML={{ __html: soap2daySchema }}
-  // />
-  // </Head>
+//   <meta
+//     name="facebook-domain-verification"
+//     content="du918bycikmo1jw78wcl9ih6ziphd7"
+//   />
+//   <meta
+//     name="dailymotion-domain-verification"
+//     content="dm3bs67ukdegz9qik"
+//   />
+//   <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
+
+//   <script
+//   type="application/ld+json"
+//   dangerouslySetInnerHTML={{ __html: soap2daySchema }}
+// />
+// </Head>
 //       <SocialSharing />
 //       <div style={styles.container}>
 //         {/* Hero Section */}
@@ -468,15 +468,6 @@
 //   },
 // };
 
-
-
-
-
-
-
-
-
-
 import React from "react";
 import path from "path";
 import fs from "fs/promises";
@@ -502,10 +493,12 @@ export async function getStaticProps() {
       const jsonData = await fs.readFile(filePath, "utf-8");
       const parsedData = JSON.parse(jsonData);
 
-      allData[category] = Array.isArray(parsedData) ? parsedData.slice(0, 8) : [];
+      allData[category] = Array.isArray(parsedData)
+        ? parsedData.slice(0, 8)
+        : [];
     }
   } catch (error) {
-    console.error(`Error loading data for category ${category}:`, error);
+    console.error("Error loading data:", error);
   }
 
   return {
@@ -515,58 +508,260 @@ export async function getStaticProps() {
   };
 }
 
+const soap2daySchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://moviesandtvshows.vercel.app/",
+      url: "https://moviesandtvshows.vercel.app/",
+      name: "Movies & Tv Shows™",
+      isPartOf: { "@id": "https://moviesandtvshows.vercel.app/#website" },
+      about: { "@id": "https://moviesandtvshows.vercel.app/#organization" },
+      primaryImageOfPage: {
+        "@id": "https://moviesandtvshows.vercel.app/#primaryimage",
+      },
+      image: { "@id": "https://moviesandtvshows.vercel.app/#primaryimage" },
+      thumbnailUrl: "https://moviesandtvshows.vercel.app/og_image.jpg",
+      datePublished: "2023-07-02T18:30:00+00:00",
+      dateModified: "2024-09-24T05:11:20+00:00",
+      breadcrumb: {
+        "@id": "https://moviesandtvshows.vercel.app/#breadcrumb",
+      },
+      inLanguage: "en-US",
+      potentialAction: [
+        {
+          "@type": "ReadAction",
+          target: ["https://moviesandtvshows.vercel.app/"],
+        },
+      ],
+    },
+    {
+      "@type": "ImageObject",
+      inLanguage: "en-US",
+      "@id": "https://moviesandtvshows.vercel.app/#primaryimage",
+      url: "https://moviesandtvshows.vercel.app/og_image.jpg",
+      contentUrl: "https://moviesandtvshows.vercel.app/og_image.jpg",
+      width: 1280,
+      height: 720,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://moviesandtvshows.vercel.app/#breadcrumb",
+      itemListElement: [{ "@type": "ListItem", position: 1, name: "Home" }],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://moviesandtvshows.vercel.app/#website",
+      url: "https://moviesandtvshows.vercel.app/",
+      name: "Movies & Tv Shows™",
+      description: "",
+      publisher: {
+        "@id": "https://moviesandtvshows.vercel.app/#organization",
+      },
+      potentialAction: [
+        {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate:
+              "https://moviesandtvshows.vercel.app/?s={search_term_string}",
+          },
+          "query-input": {
+            "@type": "PropertyValueSpecification",
+            valueRequired: true,
+            valueName: "search_term_string",
+          },
+        },
+      ],
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://moviesandtvshows.vercel.app/#organization",
+      name: "Movies & Tv Shows™",
+      url: "https://moviesandtvshows.vercel.app/",
+      logo: {
+        "@type": "ImageObject",
+        inLanguage: "en-US",
+        "@id": "https://moviesandtvshows.vercel.app/#/schema/logo/image/",
+        url: "https://moviesandtvshows.vercel.app/logo.png",
+        contentUrl: "https://moviesandtvshows.vercel.app/logo.png",
+        width: 280,
+        height: 100,
+        caption: "Movies & Tv Shows™",
+      },
+      image: {
+        "@id": "https://moviesandtvshows.vercel.app/#/schema/logo/image/",
+      },
+    },
+  ],
+});
+
 export default function HomePage({ allData }) {
   return (
     <>
       <Head>
-        <title>Movies & Tv Shows™ - Online. Stream. Download.</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <meta name="description" content="Stream and download the latest movies and TV shows." />
+        <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
+
+        <link
+          rel="sitemap"
+          type="application/xml"
+          title="Sitemap"
+          href="https://moviesandtvshows.vercel.app/sitemap.xml"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="revisit-after" content="1 days" />
+        <m eta name="referrer" content="origin" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta
+          name="keywords"
+          content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free"
+        />
+        <meta
+          property="og:description"
+          content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+        />
+        <meta
+          name="description"
+          content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+        />
+        <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content=" Movies & Tv Shows™ - Online. Stream. Download. "
+        />
+        <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
+        <meta
+          property="og:site_name"
+          content=" Movies & Tv Shows™ - Online. Stream. Download. "
+        />
+        <meta
+          property="og:image"
+          content="https://moviesandtvshows.vercel.app/og_image.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpg" />
+        <meta
+          name="application-name"
+          content=" Movies & Tv Shows™ - Online. Stream. Download. "
+        />
+        <meta
+          property="article:modified_time"
+          content="2024-01-01T13:13:13+00:00"
+        />
+        <link
+          rel="sitemap"
+          type="application/xml"
+          title="Sitemap"
+          href="https://moviesandtvshows.vercel.app/sitemap.xml"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content=" Movies & Tv Shows™ - Online. Stream. Download."
+        />
+        <meta
+          name="twitter:description"
+          content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+        />
+        <meta
+          name="twitter:image"
+          content="https://moviesandtvshows.vercel.app/og_image.jpg"
+        />
+        <meta
+          name="google-site-verification"
+          content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+        />
+
+        <meta
+          name="facebook-domain-verification"
+          content="du918bycikmo1jw78wcl9ih6ziphd7"
+        />
+        <meta
+          name="dailymotion-domain-verification"
+          content="dm3bs67ukdegz9qik"
+        />
+        <meta name="monetag" content="98a412cb5612b9188cd76b9744304b6c" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: soap2daySchema }}
+        />
       </Head>
       <SocialSharing />
       <div className="container mx-auto px-4 py-6">
         <header className="hero text-center bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 text-white p-10">
           <div className="max-w-lg mx-auto">
-            <h1 className="text-3xl font-bold">Welcome to Movies & Tv Shows™</h1>
-            <p className="text-lg">Online. Stream. Download. Your source for the latest updates across various categories.</p>
+            <h1 className="text-3xl font-bold">
+              Welcome to Movies & TV Shows™
+            </h1>
+            <p className="text-lg">
+              Online. Stream. Download. Your source for the latest updates
+              across various categories.
+            </p>
           </div>
         </header>
-
-        <nav className="mt-6 mb-8">
-          <ul className="flex justify-center gap-6 flex-wrap">
-            {["Movies", "Tv Show", "Adult", "Hindi Dubbed"].map((category) => (
-              <li key={category} className="flex-shrink-0">
-                <Link
-                  href={`/${category.toLowerCase().replace(" ", "")}`}
-                  className="border border-blue-500 py-2 px-4 text-blue-500 hover:bg-blue-700 hover:text-white rounded hover:no-underline"
-                >
-                  {category}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
 
         <main>
           {Object.keys(allData).map((category) => (
             <section key={category} className="category-section mb-12">
-              <h2 className="text-2xl font-semibold mb-4">
-                <Link href={`/${category}`} className="text-blue-500 hover:no-underline">
+              <h2 className="text-4xl font-semibold mb-4"   style={{ textShadow: "2px 1px 2px #000", marginBottom: "20px" }}>
+                <Link
+                  href={`/${category}`}
+                  className="text-blue-500 hover:no-underline font-bold" 
+                >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </Link>
               </h2>
-              <div className="category-content grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <div className="category-content grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"  >
                 {allData[category].map((item, index) => (
-                  <div key={index} className="card bg-white p-4 rounded-lg shadow-lg">
-                    <Link href={`/${category}/${generateSlug(item.title)}`} className="hover:no-underline">
-                      <div className="card-content flex flex-col justify-between h-full">
-                        <div className="card-text mb-4">
-                          <h3 className="text-xl font-semibold">{item.title}</h3>
-                          <p className="text-sm text-gray-600">{item.synopsis}</p>
-                          <div className="item-footer text-xs text-gray-500 mt-2">
-                            <span>Year: {item.year}</span> | <span>Language: {item.language}</span>
-                          </div>
-                        </div>
+                  <div
+                    key={index}
+                    className="card bg-white p-4 rounded-lg shadow-lg"
+                  >
+                    <Link
+                      href={`/${category}/${generateSlug(item.title)}`}
+                      className="hover:no-underline"
+                    >
+                     <div className="card-content flex flex-col justify-between h-full">
+  <div className="card-text mb-4">
+    <h3 className="text-xl font-semibold">{item.title}</h3>
+    <p className="text-sm font-bold text-black line-clamp-3">
+      {item.synopsis}
+    </p>
+    <div className="item-footer text-xs font-semibold text-black mt-2">
+      <span>Year: {item.year}</span> | <span>Language: {item.language}</span>
+    </div>
+  </div>
+
+
                         <div className="image-container">
                           <Image
                             src={item.image1 || item.image}
@@ -583,7 +778,10 @@ export default function HomePage({ allData }) {
                   </div>
                 ))}
               </div>
-              <Link href={`/${category}`} className="view-all text-center block text-blue-500 font-semibold mt-6 hover:no-underline">
+              <Link
+                href={`/${category}`}
+                className="view-all text-center block text-blue-500 font-semibold mt-6 hover:no-underline"
+              >
                 View All {category}
               </Link>
             </section>
@@ -593,46 +791,6 @@ export default function HomePage({ allData }) {
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import path from "path";
@@ -651,12 +809,11 @@ export default function HomePage({ allData }) {
 //     .replace(/^-+|-+$/g, ""); // Remove leading/trailing dashes
 // }
 
-
 // export async function getStaticProps() {
 //   const categories = [
-//    "movies", 
-//    "tvshow", 
-//    "hindiDubbed", 
+//    "movies",
+//    "tvshow",
+//    "hindiDubbed",
 //    "adult"
 //   ];
 //   const allData = {};
@@ -680,8 +837,6 @@ export default function HomePage({ allData }) {
 //     },
 //   };
 // }
-
-
 
 // const soap2daySchema = JSON.stringify({
 //   "@context": "https://schema.org",
@@ -774,9 +929,7 @@ export default function HomePage({ allData }) {
 // });
 
 // export default function HomePage({ allData }) {
- 
 
-  
 //   return (
 //     <>
 //     <Head>
@@ -871,7 +1024,7 @@ export default function HomePage({ allData }) {
 //       content="https://moviesandtvshows.vercel.app/og_image.jpg"
 //     />
 //     <meta name="google-site-verification" content="4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k" />
-   
+
 //     <meta
 //       name="facebook-domain-verification"
 //       content="du918bycikmo1jw78wcl9ih6ziphd7"
@@ -884,12 +1037,12 @@ export default function HomePage({ allData }) {
 //     <script
 //     type="application/ld+json"
 //     dangerouslySetInnerHTML={{ __html: soap2daySchema }}
-//   />  
-  
+//   />
+
 //   </Head>
 //   <SocialSharing />
 //   <div style={styles.container}>
-   
+
 //   <header style={styles.hero}>
 //     <div style={styles.heroImageContainer}>
 //     <Image
@@ -905,7 +1058,7 @@ export default function HomePage({ allData }) {
 //           // height: "200px",
 //           // width: "100%",
 //           // objectFit: "cover",
-         
+
 //           filter:
 //           "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
 //         }}
@@ -922,7 +1075,7 @@ export default function HomePage({ allData }) {
 
 //      <div className="categories">
 //  {Object.keys(allData).map((category) => (
-//    <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md"  style={{ marginBottom: "20px",}}> 
+//    <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md"  style={{ marginBottom: "20px",}}>
 //      <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
 //        style={{ textShadow: "3px 5px 5px #000", marginBottom:'20px'}}>
 //        <Link href={`/${category}`} className="no-underline hover:no-underline">
@@ -999,7 +1152,7 @@ export default function HomePage({ allData }) {
 //       backgroundPosition: "top", // Focus on the top part of the image
 //     },
 //   },
-   
+
 //   hero: {
 //     position: "relative",
 //     width: "100%",
@@ -1054,7 +1207,7 @@ export default function HomePage({ allData }) {
 //     fontWeight: "600",
 //     marginBottom: "20px",
 //     color: "#007bff", // Blue color for category title
-    
+
 //   },
 //   categoryContent: {
 //     display: "flex",
