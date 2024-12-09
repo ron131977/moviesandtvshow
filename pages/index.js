@@ -742,7 +742,7 @@ export default function HomePage({ allData }) {
    
     <header style={styles.hero}>
     <div style={styles.heroImageContainer}>
-    <Image
+    <img
         src="/og_image.jpg"
         alt="Hero Background"
         // layout="fill"
