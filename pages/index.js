@@ -738,92 +738,143 @@ export default function HomePage({ allData }) {
   />
   </Head>
   <SocialSharing />
-    <div style={styles.container}>
+  <div style={styles.container}>
    
-    <header style={styles.hero}>
-    <div style={styles.heroImageContainer}>
-    <Image
-        src="/og_image.jpg"
-        alt="Hero Background"
-        // layout="fill"
-        // objectFit="cover"
-        priority // Prioritize loading this image
-        width={1200} // Adjust the width according to your needs
-        height={750} // Adjust the height according to your needs
-        quality={90}
-        style={{
-          // height: "200px",
-          // width: "100%",
-          // objectFit: "cover",
-         
-          filter:
-          "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
-        }}
-        // className="w-full sm:w-32 sm:h-20 rounded-md mb-4 sm:mb-0"
-      />
-    </div>
-  <div style={styles.heroTextContainer}>
-    <h1 style={styles.heroTitle}>Welcome to Movies & Tv Shows™</h1>
-    <p style={styles.heroDescription}>
-      Online. Stream. Download. Your source for the latest updates across various categories.
-    </p>
-  </div>
+   <header style={styles.hero}>
+   <div style={styles.heroImageContainer}>
+   <Image
+       src="/og_image.jpg"
+       alt="Hero Background"
+       // layout="fill"
+      //  objectFit="cover"
+       priority // Prioritize loading this image
+       width={1200} // Adjust the width according to your needs
+       height={750} // Adjust the height according to your needs
+       quality={90}
+       style={{
+         // height: "200px",
+         // width: "100%",
+         // objectFit: "cover",
+        
+         filter:
+         "contrast(1.2) saturate(1.3) brightness(1.1) hue-rotate(0deg)",
+       }}
+       // className="w-full sm:w-32 sm:h-20 rounded-md mb-4 sm:mb-0"
+     />
+   </div>
+ <div style={styles.heroTextContainer}>
+   <h1 style={styles.heroTitle}>Welcome to Movies & Tv Shows™</h1>
+   <p style={styles.heroDescription}>
+     Online. Stream. Download. Your source for the latest updates across various categories.
+   </p>
+ </div>
 </header>
-      <div className="categories ">
-  {Object.keys(allData).map((category) => (
-    <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md "  style={{ marginBottom: "20px",}}> 
-      <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
-        style={{ textShadow: "3px 5px 5px #000", marginBottom:'20px'}}>
-        <Link href={`/${category}`} className="no-underline hover:no-underline">
-          {category.charAt(0).toUpperCase() + category.slice(1)}
-        </Link>
-      </h2>
-      <div className="category-content flex flex-col gap-8">
-        {allData[category].map((item, index) => (
-          <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
-            <Link href={`/${category}/${generateSlug(item.title)}`} className="no-underline hover:no-underline">
-              <div className="card-content flex flex-col md:flex-row gap-4">
-                <Image
-                  src={item.image1 || item.image}
-                  alt={item.title}
-                  width={800} // Adjust the width according to your needs
-                  height={450} // Adjust the height according to your needs
-                  quality={90}
-                  className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
-                  style={{
-                    // width: "250px", // Ensures the image is displayed at this width
-                    // height: "150px", // Ensures the image is displayed at this height
-                    // objectFit: "cover", // Ensures the image covers the dimensions
-                    // margin: "auto",
-                    // marginTop: '50px',
-                    // marginBottom: '20px',
-                    boxShadow: "0 0 10px 0 #000", // Shadow effect
-                    filter:
-                      "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)", // Image filter effects
-                  }}
-                />
-                <div className="card-text">
-                  <h3 className="card-title text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="card-description text-gray-600 text-base">{item.synopsis}</p>
-                </div>
-              </div>
-            </Link>
-            <small className="item-footer text-lg font-bold text-gray-500 mt-2 ">
-            Upload Date: {item.year} | Language: {item.language}
-            </small>
-          </div>
-        ))}
-      </div>
-      <Link href={`/${category}`} className="no-underline hover:no-underline">
-            <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5">View All  {category.charAt(0).toUpperCase() + category.slice(1)} Articles →</div>
-      </Link>
-    </section>
-  ))}
+     <div
+         className="shadow-lg flex items-center justify-center"
+         role="navigation"
+       >
+         <ul
+           id="menu-header-menu"
+           className="menu flex flex-wrap justify-center"
+         >
+          
+           <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+             <li id="menu-item-35" className="menu-home active">
+               <a
+                 href="../movies/"
+                 className="text-blue-500 font-bold text-xl hover:no-underline"
+               >
+                 Movies<span className="p"></span>
+               </a>
+             </li>
+           </button>
+           <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+             <li id="menu-item-248" className="menu-operating-systems">
+               <a
+                 href="../tvshow/"
+                 className="text-blue-500 font-bold text-xl hover:no-underline"
+               >
+                 Tv Show<span className="p"></span>
+               </a>
+             </li>
+           </button>          
+           <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+             <li id="menu-item-11605" className="menu-3dcad">
+               <a
+                 href="../adult/"
+                 className="text-blue-500 font-bold text-xl hover:no-underline"
+               >
+                 Adult<span className="p"></span>
+               </a>
+             </li>
+           </button>
+           <button className="border border-blue-500 p-2 m-1 hover:bg-blue-700">
+             <li id="menu-item-248" className="menu-operating-systems">
+               <a
+                 href="../hindiDubbed/"
+                 className="text-blue-500 font-bold text-xl hover:no-underline"
+               >
+                 Hindi Dubed<span className="p"></span>
+               </a>
+             </li>
+           </button>
+         </ul>
+       </div>
+     <div className="categories ">
+ {Object.keys(allData).map((category) => (
+   <section key={category} className="category-section bg-gray-100 p-4 rounded-lg shadow-md "  style={{ marginBottom: "20px",}}> 
+     <h2 className="category-title text-4xl font-semibold text-blue-500 mb-5"
+       style={{ textShadow: "3px 5px 5px #000", marginBottom:'20px'}}>
+       <Link href={`/${category}`} className="no-underline hover:no-underline">
+         {category.charAt(0).toUpperCase() + category.slice(1)}
+       </Link>
+     </h2>
+     <div className="category-content flex flex-col gap-8">
+       {allData[category].map((item, index) => (
+         <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
+           <Link href={`/${category}/${generateSlug(item.title)}`} className="no-underline hover:no-underline">
+             <div className="card-content flex flex-col md:flex-row gap-4">
+               <Image
+                 src={item.image1 || item.image}
+                 alt={item.title}
+                 width={800} // Adjust the width according to your needs
+                 height={450} // Adjust the height according to your needs
+                 quality={90}
+                 className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
+                 style={{
+                   // width: "250px", // Ensures the image is displayed at this width
+                   // height: "150px", // Ensures the image is displayed at this height
+                   // objectFit: "cover", // Ensures the image covers the dimensions
+                   // margin: "auto",
+                   // marginTop: '50px',
+                   // marginBottom: '20px',
+                   boxShadow: "0 0 10px 0 #000", // Shadow effect
+                   filter:
+                     "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)", // Image filter effects
+                 }}
+               />
+               <div className="card-text">
+                 <h3 className="card-title text-xl font-semibold mb-2">{item.title}</h3>
+                 <p className="card-description text-gray-600 text-base">{item.synopsis}</p>
+               </div>
+             </div>
+           </Link>
+           <small className="item-footer text-lg font-bold text-gray-500 mt-2 ">
+           Upload Date: {item.year} | Language: {item.language}
+           </small>
+         </div>
+       ))}
+     </div>
+     <Link href={`/${category}`} className="no-underline hover:no-underline">
+           <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5">View All  {category.charAt(0).toUpperCase() + category.slice(1)} Articles →</div>
+     </Link>
+   </section>
+ ))}
 </div>
 
-      </div>
-    </>
-  );
+     </div>
+   </>
+ );
 }
 // Styles for the page
 const styles = {
