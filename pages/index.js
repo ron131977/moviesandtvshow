@@ -633,7 +633,7 @@ export default function HomePage({ allData }) {
       rel="sitemap"
       type="application/xml"
       title="Sitemap"
-      href="https://a2zmovies.vercel.app/sitemap.xml"
+      href="https://moviesandtvshows.vercel.app/sitemap.xml"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -671,21 +671,21 @@ export default function HomePage({ allData }) {
       name="description"
       content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
     />
-    <link rel="canonical" href="https://a2zmovies.vercel.app/" />
+    <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
       content=" Movies & Tv Shows™ - Online. Stream. Download. "
     />
-    <meta property="og:url" content="https://a2zmovies.vercel.app" />
+    <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
     <meta
       property="og:site_name"
       content=" Movies & Tv Shows™ - Online. Stream. Download. "
     />
     <meta
       property="og:image"
-      content="https://a2zmovies.vercel.app/og_image.jpg"
+      content="https://moviesandtvshows.vercel.app/og_image.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -702,7 +702,7 @@ export default function HomePage({ allData }) {
       rel="sitemap"
       type="application/xml"
       title="Sitemap"
-      href="https://a2zmovies.vercel.app/sitemap.xml"
+      href="https://moviesandtvshows.vercel.app/sitemap.xml"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -715,7 +715,7 @@ export default function HomePage({ allData }) {
     />
     <meta
       name="twitter:image"
-      content="https://a2zmovies.vercel.app/og_image.jpg"
+      content="https://moviesandtvshows.vercel.app/og_image.jpg"
     />
     <meta
       name="google-site-verification"
@@ -742,11 +742,11 @@ export default function HomePage({ allData }) {
    
     <header style={styles.hero}>
     <div style={styles.heroImageContainer}>
-    <img
+    <Image
         src="/og_image.jpg"
         alt="Hero Background"
         // layout="fill"
-        objectFit="cover"
+        // objectFit="cover"
         priority // Prioritize loading this image
         width={1200} // Adjust the width according to your needs
         height={750} // Adjust the height according to your needs
@@ -1353,7 +1353,7 @@ const styles = {
 //   //   justifyContent: "center",
 //   //   alignItems: "center",
 //   //   // minHeight: "100vh", // Full viewport height for the hero section
-//   //   backgroundImage: "url(https://a2zmovies.vercel.app/og_image.jpg)", // Background image
+//   //   backgroundImage: "url(https://moviesandtvshows.vercel.app/og_image.jpg)", // Background image
 //   //   backgroundSize: "cover", // Make the image cover the entire area
 //   //   backgroundPosition: "center", // Center the image
 //   //   backgroundRepeat: "no-repeat", // Prevent image repetition
