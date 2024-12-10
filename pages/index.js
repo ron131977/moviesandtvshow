@@ -467,6 +467,10 @@
 //     },
 //   },
 // };
+
+
+
+
 import React from "react";
 import path from "path";
 import fs from "fs/promises";
@@ -675,9 +679,9 @@ export default function HomePage({ allData }) {
                           <Image
                             src={item.image1 || item.image}
                             alt={item.title}
-                            width={300}
-                            height={169}
-                            layout="intrinsic"
+                            width={0}  // Set to 0 to allow responsiveness
+                            height={0} // Set to 0 to allow responsiveness
+                            layout="responsive"  // Make image responsive
                             priority={index === 0}
                             quality={90}
                           />
@@ -700,7 +704,6 @@ export default function HomePage({ allData }) {
     </>
   );
 }
-
 // import React, { useState, useEffect } from "react";
 // import path from "path";
 // import fs from "fs/promises";
