@@ -819,6 +819,142 @@ export default function HomePage({ allData }) {
     </>
   );
 }
+const styles = {
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "20px",
+    fontFamily: "'Poppins', sans-serif",
+    color: "#333",
+  },
+  // hero: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   // minHeight: "100vh", // Full viewport height for the hero section
+  //   backgroundImage: "url(https://moviefree.vercel.app/og_image.jpg)", // Background image
+  //   backgroundSize: "cover", // Make the image cover the entire area
+  //   backgroundPosition: "center", // Center the image
+  //   backgroundRepeat: "no-repeat", // Prevent image repetition
+  //   color: "#fff", // White text for readability
+  //   textAlign: "center", // Center align text
+  //   padding: "20px", // Add padding for spacing
+  //   boxSizing: "border-box", // Include padding in element's total width/height
+  // },
+
+  // Optional: Responsive tweaks for smaller screens
+  "@media (max-width: 768px)": {
+    hero: {
+      padding: "15px", // Adjust padding for smaller screens
+      backgroundPosition: "top", // Focus on the top part of the image
+    },
+  },
+
+  hero: {
+    position: "relative",
+    width: "100%",
+    height: "250px", // Reduced height for the hero section
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
+  heroImageContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 1,
+  },
+  heroTextContainer: {
+    position: "relative",
+    zIndex: 2,
+    textAlign: "center",
+    color: "#fff",
+    padding: "10px",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+    borderRadius: "10px",
+  },
+  heroTitle: {
+    fontSize: "2.5rem",
+    fontWeight: "800",
+    marginTop: "10px",
+    marginBottom: "5px",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+  },
+  heroDescription: {
+    fontSize: "1rem",
+    fontWeight: "400",
+    textShadow: "1px 1px 4px rgba(0, 0, 0, 0.6)",
+  },
+  categories: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "40px",
+  },
+  categorySection: {
+    backgroundColor: "var(--section-bg-color)", // Dynamic section background
+    padding: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)", // Subtle shadow
+  },
+  categoryTitle: {
+    fontSize: "2rem",
+    fontWeight: "600",
+    marginBottom: "20px",
+    color: "#007bff", // Blue color for category title
+  },
+  categoryContent: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "30px",
+  },
+  card: {
+    backgroundColor: "var(--card-bg-color)", // Dynamic card background
+    padding: "15px",
+    borderRadius: "8px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Light shadow for cards
+    overflow: "hidden",
+  },
+  cardContent: {
+    display: "flex",
+    gap: "20px",
+  },
+  cardImage: {
+    width: "120px",
+    height: "80px",
+    objectFit: "cover",
+    borderRadius: "8px",
+  },
+  cardText: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardTitle: {
+    fontSize: "1.25rem",
+    fontWeight: "600",
+    margin: "0 0 10px",
+  },
+  cardDescription: {
+    fontSize: "1rem",
+    color: "#666", // Grey color for descriptions
+  },
+  itemFooter: {
+    fontSize: "0.9rem",
+    color: "#777", // Slightly lighter grey for footer text
+    marginTop: "10px",
+  },
+  viewAll: {
+    fontSize: "1rem",
+    fontWeight: "600",
+    color: "#007bff", // Blue color for "view all" link
+    textDecoration: "none",
+    marginTop: "20px",
+  },
+};
+
 // import React, { useState, useEffect } from "react";
 // import path from "path";
 // import fs from "fs/promises";
