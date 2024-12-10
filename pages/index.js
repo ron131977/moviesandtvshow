@@ -1117,6 +1117,7 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+
 // Helper function to create a slug from a title
 function generateSlug(title) {
   return title
@@ -1229,10 +1230,10 @@ export async function getStaticProps() {
     const hindiDubbedData = require('../public/hindidubbed.json');
 
     // Log each data type
-    console.log('Fetched movieData:', movieData);
-    console.log('Fetched tvshowData:', tvshowData);
-    console.log('Fetched adultData:', adultData);
-    console.log('Fetched hindiDubbedData:', hindiDubbedData);
+    // console.log('Fetched movieData:', movieData);
+    // console.log('Fetched tvshowData:', tvshowData);
+    // console.log('Fetched adultData:', adultData);
+    // console.log('Fetched hindiDubbedData:', hindiDubbedData);
 
     // Slice the data to get only the first 5 items
     const allData = {
