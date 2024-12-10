@@ -737,68 +737,85 @@ export default function HomePage({ allData }) {
           </div>
         </header>
 
-        <main>
+        <div className="categories ">
           {Object.keys(allData).map((category) => (
-            <section key={category} className="category-section mb-12">
+            <section
+              key={category}
+              className="category-section bg-gray-100 p-4 rounded-lg shadow-md "
+              style={{ marginBottom: "20px" }}
+            >
               <h2
-                className="text-4xl font-semibold mb-4"
-                style={{ textShadow: "2px 1px 2px #000" }}
+                className="category-title text-4xl font-semibold text-blue-500 mb-5"
+                style={{ textShadow: "3px 5px 5px #000", marginBottom: "20px" }}
               >
                 <Link
                   href={`/${category}`}
-                  className="text-blue-500 hover:no-underline font-bold"
+                  className="no-underline hover:no-underline"
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </Link>
               </h2>
-              <div className="category-content grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <div className="category-content flex flex-col gap-8">
                 {allData[category].map((item, index) => (
                   <div
                     key={index}
-                    className="card bg-white p-4 rounded-lg shadow-lg"
+                    className="card bg-white p-4 rounded-lg shadow-md"
                   >
                     <Link
                       href={`/${category}/${generateSlug(item.title)}`}
-                      className="hover:no-underline"
+                      className="no-underline hover:no-underline"
                     >
-                      <div className="card-content flex flex-col justify-between h-full">
-                        <div className="card-text mb-4">
-                          <h3 className="text-xl font-semibold">{item.title}</h3>
+                      <div className="card-content flex flex-col md:flex-row gap-4">
+                        <Image
+                          src={item.image1 || item.image}
+                          alt={item.title}
+                          width={800} // Adjust the width according to your needs
+                          height={450} // Adjust the height according to your needs
+                          quality={90}
+                          className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
+                          style={{
+                            // width: "250px", // Ensures the image is displayed at this width
+                            // height: "150px", // Ensures the image is displayed at this height
+                            // objectFit: "cover", // Ensures the image covers the dimensions
+                            // margin: "auto",
+                            // marginTop: '50px',
+                            // marginBottom: '20px',
+                            boxShadow: "0 0 10px 0 #000", // Shadow effect
+                            filter:
+                              "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)", // Image filter effects
+                          }}
+                        />
+                        <div className="card-text">
+                          <h3 className="card-title text-xl font-semibold mb-2">
+                            {item.title}
+                          </h3>
                           <p className="text-sm font-bold text-black line-clamp-3">
                             {item.synopsis}
                           </p>
-                          <div className="item-footer text-xs font-semibold text-black mt-2">
-                            <span>Year: {item.year}</span> |{" "}
-                            <span>Language: {item.language}</span>
-                          </div>
-                        </div>
-
-                        <div className="image-container">
-                          <Image
-                            src={item.image1 || item.image}
-                            alt={item.title}
-                            width={0}  // Set to 0 to allow responsiveness
-                            height={0} // Set to 0 to allow responsiveness
-                            layout="responsive"  // Make image responsive
-                            priority={index === 0}
-                            quality={90}
-                          />
                         </div>
                       </div>
                     </Link>
+                    <small className="item-footer text-lg font-bold text-gray-500 mt-2 ">
+                      Upload Date: {item.year} | Language: {item.language}
+                    </small>
                   </div>
                 ))}
               </div>
               <Link
                 href={`/${category}`}
-                className="view-all text-center block text-blue-500 font-semibold mt-6 hover:no-underline"
+                className="no-underline hover:no-underline"
               >
-                View All {category}
+                <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5">
+                  View All{" "}
+                  {category.charAt(0).toUpperCase() + category.slice(1)}{" "}
+                  Articles →
+                </div>
               </Link>
             </section>
           ))}
-        </main>
+        </div>
       </div>
+
     </>
   );
 }
