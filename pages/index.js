@@ -726,6 +726,26 @@ export default function HomePage({ allData }) {
 />
 </Head>
       <SocialSharing />
+      <Image
+        src="/logo.png"
+        alt="Movies & Tv Shows"
+        className=" items-center justify-center h-auto sm:h-[30vh] p-2 "
+        width={500}
+        height={300}
+        quality={90}
+        loading="lazy"
+        style={{
+          // width: "500px",
+          // height: "300px",
+           margin: "auto",
+          // marginTop: "50px",
+          marginBottom: "20px",
+          borderRadius: "50px",
+          boxShadow: "0 0 10px 0 #000",
+          filter: "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)",
+        }}
+      /> 
+
       <div className="container mx-auto px-4 py-6">
         <header className="hero text-center bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 text-white p-10">
           <div className="max-w-lg mx-auto">
