@@ -96,7 +96,7 @@ class MyDocument extends Document {
           />
           <meta
             name='google-site-verification'
-            content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
+            content='o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU'
           />
           <meta
             name='facebook-domain-verification'
@@ -107,11 +107,7 @@ class MyDocument extends Document {
             content='dmdzuqt3p027t2adn'
           />
           <meta name='monetag' content='35a75bbdeae678c82776e64fb78cdac5' />
-          {/* <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W62BF3BQ');`,
-            }}
-          /> */}
+       
         </Head>
 
         <body>

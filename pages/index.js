@@ -226,7 +226,7 @@
 //   />
 //   <meta
 //     name="google-site-verification"
-//     content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+//     content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU"
 //   />
 
 //   <meta
@@ -701,7 +701,7 @@ export default function HomePage({ allData }) {
   />
   <meta
     name="google-site-verification"
-    content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+    content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU"
   />
 
   <meta
