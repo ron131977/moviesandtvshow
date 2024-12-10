@@ -471,25 +471,32 @@
 
 
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import path from "path";
 import fs from "fs/promises";
 import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
+import Image from 'next/image';
 import SocialSharing from "../components/SocialSharing";
 
-// Utility function to generate slugs for the title
+import mainStyles from "@styles/styles.module.css";
+// Helper function to create a slug from a title
 function generateSlug(title) {
   return title
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric characters with dashes
+    .replace(/^-+|-+$/g, ""); // Remove leading/trailing dashes
 }
 
-// Static props to load data for categories
+
 export async function getStaticProps() {
-  const categories = ["movies", "tvshow", "hindiDubbed", "adult"];
+  const categories = [
+    "movies",
+    "tvshow",
+    "hindiDubbed",
+    "adult",
+ 
+  ];
   const allData = {};
 
   try {
@@ -498,12 +505,10 @@ export async function getStaticProps() {
       const jsonData = await fs.readFile(filePath, "utf-8");
       const parsedData = JSON.parse(jsonData);
 
-      allData[category] = Array.isArray(parsedData)
-        ? parsedData.slice(0, 8)
-        : [];
+      allData[category] = Array.isArray(parsedData) ? parsedData.slice(0, 5) : [];
     }
   } catch (error) {
-    console.error("Error loading data:", error);
+    console.error(`Error loading data for category ${category}:`, error);
   }
 
   return {
@@ -609,96 +614,97 @@ export default function HomePage({ allData }) {
   return (
     <>
        <Head>
- <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
+    <title> Movies & Tv Shows™ - Online. Stream. Download.</title>
 
- <link
-    rel="sitemap"
-    type="application/xml"
-    title="Sitemap"
-    href="https://moviesandtvshows.vercel.app/sitemap.xml"
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="/apple-touch-icon.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="/favicon-32x32.png"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="/favicon-16x16.png"
-  />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="googlebot" content="index,follow" />
-  <meta name="revisit-after" content="1 days" />
-  <m eta name="referrer" content="origin" />
-  <meta
-    name="robots"
-    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-  />
-  <meta name="keywords" content="moviefree, movie free 2024, free movie, free tv shows, watch movie online, free movies online, free movie streaming, movie free streaming, download free" />
-  <meta
-    property="og:description"
-    content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-  />
-  <meta
-    name="description"
-    content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-  />
-  <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:title"
-    content=" Movies & Tv Shows™ - Online. Stream. Download. "
-  />
-  <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
-  <meta
-    property="og:site_name"
-    content=" Movies & Tv Shows™ - Online. Stream. Download. "
-  />
-  <meta
-    property="og:image"
-    content="https://moviesandtvshows.vercel.app/og_image.jpg"
-  />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/jpg" />
-  <meta
-    name="application-name"
-    content=" Movies & Tv Shows™ - Online. Stream. Download. "
-  />
-  <meta
-    property="article:modified_time"
-    content="2024-01-01T13:13:13+00:00"
-  />
-  <link
-    rel="sitemap"
-    type="application/xml"
-    title="Sitemap"
-    href="https://moviesandtvshows.vercel.app/sitemap.xml"
-  />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta
-    name="twitter:title"
-    content=" Movies & Tv Shows™ - Online. Stream. Download."
-  />
-  <meta
-    name="twitter:description"
-    content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
-  />
-  <meta
-    name="twitter:image"
-    content="https://moviesandtvshows.vercel.app/og_image.jpg"
-  />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="referrer" content="origin" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="keywords" content="atozmovies,a to z movies,a-z movies,watch free movies,watch movies online,download movies,watch full movies,watch hd movies" />
+    <meta
+      property="og:description"
+      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+    />
+    <meta
+      name="description"
+      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+    />
+    <link rel="canonical" href="https://moviesandtvshows.vercel.app/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+    />
+    <meta property="og:url" content="https://moviesandtvshows.vercel.app" />
+    <meta
+      property="og:site_name"
+      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+    />
+    <meta
+      property="og:image"
+      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta
+      name="application-name"
+      content=" Movies & Tv Shows™ - Online. Stream. Download. "
+    />
+    <meta
+      property="article:modified_time"
+      content="2024-01-01T13:13:13+00:00"
+    />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://moviesandtvshows.vercel.app/sitemap.xml"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content=" Movies & Tv Shows™ - Online. Stream. Download."
+    />
+    <meta
+      name="twitter:description"
+      content="Stream HD movies and TV series for free on Movies & Tv Shows™. Explore, stream, and download full-length movies and shows in HD quality without registration."
+    />
+    <meta
+      name="twitter:image"
+      content="https://moviesandtvshows.vercel.app/og_image.jpg"
+    />
+
   <meta
     name="google-site-verification"
     content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU"
