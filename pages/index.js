@@ -1113,15 +1113,10 @@
 
 
 
-
-
-
-
-
-
-import Link from "next/link";
-import Image from "next/image";
-
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
 // Helper function to create a slug from a title
 function generateSlug(title) {
   return title
@@ -1130,116 +1125,116 @@ function generateSlug(title) {
     .replace(/^-+|-+$/g, ""); // Remove leading/trailing dashes
 }
 
+// Your existing component
 const HomePage = ({ allData }) => {
+  console.log('Received allData:', allData); // Log the data to check the structure
+
   return (
-    <div className="categories">
-      {Object.keys(allData).length > 0 ? (
-        Object.keys(allData).map((category) => (
-          <section
-            key={category}
-            className="category-section bg-gray-100 p-4 rounded-lg shadow-md"
-            style={{ marginBottom: "20px" }}
-          >
-            <h2
-              className="category-title text-4xl font-semibold text-blue-500 mb-5"
-              style={{ textShadow: "3px 5px 5px #000", marginBottom: "20px" }}
-            >
-              <Link
-                href={`/${category}`}
-                className="no-underline hover:no-underline"
+    <>
+      <div className="categories">
+        {Object.keys(allData).length > 0 ? (
+          Object.keys(allData).map((category) => {
+            const categoryData = allData[category];
+            
+            if (!categoryData || categoryData.length === 0) {
+              return null; // Skip rendering if category data is empty
+            }
+
+            return (
+              <section
+                key={category}
+                className="category-section bg-gray-100 p-4 rounded-lg shadow-md"
+                style={{ marginBottom: "20px" }}
               >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </Link>
-            </h2>
-            <div className="category-content flex flex-col gap-8">
-              {allData[category].map((item, index) => {
-                // Use a fallback image if the image is not valid
-                const imageUrl =
-                  item.image1?.trim() || item.image?.trim() || "/default-image.jpg"; 
-
-                // Ensure the image path is valid
-                if (!imageUrl || imageUrl.trim() === "") {
-                  console.error("Invalid image URL for:", item.title);
-                  return null; // Skip rendering if image is invalid
-                }
-
-                return (
-                  <div
-                    key={index}
-                    className="card bg-white p-4 rounded-lg shadow-md"
+                <h2
+                  className="category-title text-4xl font-semibold text-blue-500 mb-5"
+                  style={{ textShadow: "3px 5px 5px #000", marginBottom: "20px" }}
+                >
+                  <Link
+                    href={`/${category}`}
+                    className="no-underline hover:no-underline"
                   >
-                    <Link
-                      href={`/${category}/${generateSlug(item.title)}`} // Adjusted to individual item page
-                      className="no-underline hover:no-underline"
-                    >
-                      <div className="card-content flex flex-col md:flex-row gap-4">
-                        {/* Ensure src is a valid path */}
-                        <Image
-                          src={imageUrl}
-                          alt={item.title}
-                          width={800}
-                          height={450}
-                          quality={90}
-                          className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
-                          style={{
-                            boxShadow: "0 0 10px 0 #000",
-                            filter:
-                              "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)",
-                          }}
-                        />
-                        <div className="card-text">
-                          <h3 className="card-title text-xl font-semibold mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-sm font-bold text-black line-clamp-3">
-                            {item.synopsis}
-                          </p>
-                        </div>
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </Link>
+                </h2>
+                <div className="category-content flex flex-col gap-8">
+                  {categoryData.map((item, index) => {
+                    const imageUrl =
+                      item.image1?.trim() || item.image?.trim() || "/default-image.jpg";
+
+                    if (!imageUrl || imageUrl.trim() === "") {
+                      console.error("Invalid image URL for:", item.title);
+                      return null; // Skip rendering if image is invalid
+                    }
+
+                    return (
+                      <div key={index} className="card bg-white p-4 rounded-lg shadow-md">
+                        <Link
+                          href={`/${category}/${generateSlug(item.title)}`}
+                          className="no-underline hover:no-underline"
+                        >
+                          <div className="card-content flex flex-col md:flex-row gap-4">
+                            <Image
+                              src={imageUrl}
+                              alt={item.title}
+                              width={800}
+                              height={450}
+                              quality={90}
+                              className="card-image w-full md:w-32 h-auto md:h-20 object-cover rounded-lg mb-4 md:mb-0"
+                              style={{
+                                boxShadow: "0 0 10px 0 #000",
+                                filter: "contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)",
+                              }}
+                            />
+                            <div className="card-text">
+                              <h3 className="card-title text-xl font-semibold mb-2">
+                                {item.title}
+                              </h3>
+                              <p className="text-sm font-bold text-black line-clamp-3">
+                                {item.synopsis}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                        <small className="item-footer text-lg font-bold text-gray-500 mt-2">
+                          Upload Date: {item.year} | Language: {item.language}
+                        </small>
                       </div>
-                    </Link>
-                    <small className="item-footer text-lg font-bold text-gray-500 mt-2">
-                      Upload Date: {item.year} | Language: {item.language}
-                    </small>
+                    );
+                  })}
+                </div>
+                <Link href={`/${category}`} className="no-underline hover:no-underline">
+                  <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5">
+                    View All {category.charAt(0).toUpperCase() + category.slice(1)} Articles →
                   </div>
-                );
-              })}
-            </div>
-            <Link
-              href={`/${category}`} // Adjusted to category index page link
-              className="no-underline hover:no-underline"
-            >
-              <div className="animate-pulse view-all text-red-500 text-2xl font-semibold mt-5">
-                View All {category.charAt(0).toUpperCase() + category.slice(1)}{" "}
-                Articles →
-              </div>
-            </Link>
-          </section>
-        ))
-      ) : (
-        <div>No data available.</div>
-      )}
-    </div>
+                </Link>
+              </section>
+            );
+          })
+        ) : (
+          <div>No data available.</div>
+        )}
+      </div>
+    </>
   );
 };
 
-export async function getServerSideProps() {
+// This function gets called at build time
+export async function getStaticProps() {
   try {
-    // Fetch data from the respective JSON files in the public folder
-    const movieRes = await fetch('https://moviesandtvshows.vercel.app/movies.json'); // Fetch from the correct URL
-    const tvshowRes = await fetch('https://moviesandtvshows.vercel.app/tvshow.json');
-    const adultRes = await fetch('https://moviesandtvshows.vercel.app/adult.json');
-    const hindiDubbedRes = await fetch('https://moviesandtvshows.vercel.app/hindidubbed.json');
+    // Import local JSON files (instead of fetching them from the server)
+    const movieData = require('../public/movies.json');
+    const tvshowData = require('../public/tvshow.json');
+    const adultData = require('../public/adult.json');
+    const hindiDubbedData = require('../public/hindidubbed.json');
 
-    if (!movieRes.ok || !tvshowRes.ok || !adultRes.ok || !hindiDubbedRes.ok) {
-      throw new Error("Error fetching data");
-    }
+    // Log each data type
+    console.log('Fetched movieData:', movieData);
+    console.log('Fetched tvshowData:', tvshowData);
+    console.log('Fetched adultData:', adultData);
+    console.log('Fetched hindiDubbedData:', hindiDubbedData);
 
-    const movieData = await movieRes.json();
-    const tvshowData = await tvshowRes.json();
-    const adultData = await adultRes.json();
-    const hindiDubbedData = await hindiDubbedRes.json();
-
-    // Slice each category's data to get only the first 5 items
+    // Slice the data to get only the first 5 items
     const allData = {
       movies: movieData.slice(0, 5),
       tvshow: tvshowData.slice(0, 5),
@@ -1247,20 +1242,16 @@ export async function getServerSideProps() {
       hindiDubbed: hindiDubbedData.slice(0, 5),
     };
 
-    // Return the combined data as props
+    console.log('All data:', allData); // Log the final allData object
+
     return { props: { allData } };
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error('Error fetching data:', error);
     return { props: { allData: {} } }; // Return empty data if error occurs
   }
 }
 
 export default HomePage;
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import path from "path";
