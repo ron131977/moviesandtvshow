@@ -1085,10 +1085,10 @@
 // // Fetching the data in getServerSideProps
 // export async function getServerSideProps() {
 //   // Fetch data from the respective JSON files
-//   const movieRes = await fetch('http://localhost:3000/movies.json'); // Replace with your actual path
-//   const tvshowRes = await fetch('http://localhost:3000/tvshow.json'); // Replace with your actual path
-//   const adultRes = await fetch('http://localhost:3000/adult.json'); // Replace with your actual path
-//   const hindiDubbedRes = await fetch('http://localhost:3000/hindiDubbed.json'); // Replace with your actual path
+//   const movieRes = await fetch('https://moviesandtvshows.vercel.app/movies.json'); // Replace with your actual path
+//   const tvshowRes = await fetch('https://moviesandtvshows.vercel.app/tvshow.json'); // Replace with your actual path
+//   const adultRes = await fetch('https://moviesandtvshows.vercel.app/adult.json'); // Replace with your actual path
+//   const hindiDubbedRes = await fetch('https://moviesandtvshows.vercel.app/hindiDubbed.json'); // Replace with your actual path
 
 //   const movieData = await movieRes.json();
 //   const tvshowData = await tvshowRes.json();
@@ -1448,10 +1448,10 @@ const HomePage = ({ allData }) => {
 export async function getServerSideProps() {
   try {
     // Fetch data from the respective JSON files in the public folder
-    const movieRes = await fetch('http://localhost:3000/movies.json'); // Fetch from the correct URL
-    const tvshowRes = await fetch('http://localhost:3000/tvshow.json');
-    const adultRes = await fetch('http://localhost:3000/adult.json');
-    const hindiDubbedRes = await fetch('http://localhost:3000/hindidubbed.json');
+    const movieRes = await fetch('https://moviesandtvshows.vercel.app/movies.json'); // Fetch from the correct URL
+    const tvshowRes = await fetch('https://moviesandtvshows.vercel.app/tvshow.json');
+    const adultRes = await fetch('https://moviesandtvshows.vercel.app/adult.json');
+    const hindiDubbedRes = await fetch('https://moviesandtvshows.vercel.app/hindidubbed.json');
 
     if (!movieRes.ok || !tvshowRes.ok || !adultRes.ok || !hindiDubbedRes.ok) {
       throw new Error("Error fetching data");
